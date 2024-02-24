@@ -50,7 +50,7 @@ const NavbarMobile = memo(({ className }: NavbarMobileProps) => {
     [cls.blurred]: getBlurred(),
   };
   return (
-    <mobileNavbarContext.Provider value={opened}>
+    <>
       <motion.div
         className={classNames(cls.NavbarMobile, { ...mods }, [className])}
         initial={loaded ? false : 'hidden'}
@@ -70,7 +70,7 @@ const NavbarMobile = memo(({ className }: NavbarMobileProps) => {
         </button>
       </motion.div>
       {opened && <NavbarMobileOpened closeNavbar={closeNavbar} />}
-    </mobileNavbarContext.Provider>
+    </>
   );
 });
 
