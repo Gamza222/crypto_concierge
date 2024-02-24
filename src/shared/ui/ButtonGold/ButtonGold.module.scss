@@ -1,0 +1,90 @@
+.ButtonGold {
+  cursor: pointer;
+  width: fit-content;
+  height: 100%;
+  text-transform: uppercase;
+  border-radius: 8px;
+  background-size: 200%;
+  padding: 2px;
+  position: relative;
+  animation: all 0.2s linear;
+
+  &:hover {
+    .ButtonGold__content {
+      filter: brightness(1.2);
+    }
+  }
+
+  &:active {
+    .ButtonGold__content {
+      transition: 0s linear;
+      filter: brightness(0.8);
+    }
+  }
+
+  @media (hover: none) {
+    &:hover {
+      .ButtonGold__content {
+        filter: none;
+      }
+    }
+  }
+
+  &__content {
+    padding: 11px 30px;
+    width: fit-content;
+
+    margin: auto;
+    border-radius: 8px;
+    position: relative;
+    z-index: 5;
+    background: linear-gradient(
+      90deg,
+      var(--color-gold-1) 0.01%,
+      var(--color-gold-2) 60%
+    );
+    color: var(--color-black);
+    font-size: var(--font-size-2);
+    font-weight: var(--font-weight-bold);
+    animation: rotation 5s ease infinite alternate;
+    background-size: 250% 100%;
+    transition: 0.1s linear;
+  }
+}
+
+@keyframes rotation {
+  0% {
+    background-position: 60% 0%;
+  }
+  100% {
+    background-position: 20% 0%;
+  }
+}
+@keyframes hover {
+  0% {
+    background-position: 0 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+//   &::after {
+//     content: '';
+//     position: absolute;
+//     width: calc(100% + 5px);
+//     height: calc(100% + 5px);
+//     border-radius: 8px;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     z-index: 0;
+//     background: linear-gradient(
+//       120deg,
+//       var(--color-gold-3) 0%,
+//       var(--color-gold-2) 100%
+//     );
+//     background-size: 150% 100%;
+
+//     animation: rotation 4s ease infinite alternate;
+//   }

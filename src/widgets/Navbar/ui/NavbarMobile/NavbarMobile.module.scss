@@ -1,0 +1,27 @@
+.NavbarMobile {
+  padding: 0 var(--padding-main-sides);
+  padding-top: var(--padding-navbar-mobile-top);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.Logo {
+  display: flex;
+  height: fit-content;
+  &__pic {
+    height: var(--logo-navbar-mobile-height);
+    width: 22px;
+  }
+}
+
+.MenuBtn {
+  &__content {
+    width: 40px;
+    height: 21px;
+  }
+}

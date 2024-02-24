@@ -1,0 +1,38 @@
+.Navbar {
+  padding: 0 var(--padding-main-sides);
+  padding-top: var(--padding-navbar-top);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  margin: 0 auto;
+  z-index: 1;
+  max-width: 2000px;
+}
+
+.Logo {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  height: fit-content;
+  &__title {
+    font-family: var(--font-family-logo);
+    font-size: var(--font-size-3);
+    color: var(--primary-color);
+    text-transform: uppercase;
+    filter: drop-shadow(0px 0px 4px black);
+  }
+
+  &__pic {
+    width: 32px;
+    height: 62px;
+  }
+}
+
+.Menu {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}

@@ -1,0 +1,30 @@
+@import './reset/reset.scss';
+@import './variables/global.scss';
+
+html {
+  background: #000;
+}
+body {
+  font-family: var(--font-family-main);
+  color: var(--primary-color);
+  min-width: 280px;
+  height: 100%;
+  min-height: 100vh;
+  max-width: 2000px;
+  margin: 0 auto;
+  background: var(--overlay-color);
+}
+
+.app {
+  position: relative;
+}
+
+.corner {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  @media screen and (max-width: 1200px) {
+    display: none;
+  }
+}

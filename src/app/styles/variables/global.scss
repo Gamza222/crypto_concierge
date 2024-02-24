@@ -1,0 +1,117 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/Montserrat/static/Montserrat-Regular.ttf')
+    format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/Montserrat/static/Montserrat-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/Montserrat/static/Montserrat-ExtraBold.ttf')
+    format('truetype');
+  font-weight: 800;
+}
+@font-face {
+  font-family: 'BackBackOne';
+  src: url('./fonts/Bakbak_One/BakbakOne-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+:root {
+  --font-family-main: 'Montserrat', sans-serif;
+  --font-family-logo: 'BackBackOne', sans-serif;
+
+  //fonts
+  --font-size-1: 12px;
+  --font-size-2: 14px;
+  --font-size-3: 18px;
+  --font-size-4: 24px;
+  --font-size-5: 30px;
+  --font-size-6: 40px;
+  --font-size-7: 52px;
+
+  --font-weight-thin: 400;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  //Sizes
+  --logo-navbar-mobile-height: 44px;
+  --logo-navbar-height: 62px;
+
+  //Paddings
+  --padding-main-sides: 170px;
+  --padding-navbar-mobile-top: 40px;
+  --padding-navbar-top: 27px;
+
+  //indexes
+
+  //colors
+  --overlay-color: linear-gradient(180deg, #373737 0%, #1d1d1d 100%);
+  --primary-color: #fff;
+  --color-black: #000;
+  --color-gold-1: #af8a53;
+  --color-gold-2: #ffeaa5;
+}
+
+@media screen and (max-width: 1460px) {
+  :root {
+    //fonts
+    --font-size-1: 12px;
+    --font-size-2: 14px;
+    --font-size-3: 16px;
+    --font-size-4: 22px;
+    --font-size-5: 26px;
+    --font-size-6: 35px;
+    --font-size-7: 42px;
+
+    //Paddings
+    --padding-main-sides: 100px;
+  }
+}
+@media screen and (max-width: 1060px) {
+  :root {
+    //fonts
+    --font-size-1: 12px;
+    --font-size-2: 14px;
+    --font-size-3: 15px;
+    --font-size-4: 18px;
+    --font-size-5: 24px;
+    --font-size-6: 30px;
+    --font-size-7: 36px;
+    //Paddings
+    --padding-main-sides: 70px;
+  }
+}
+@media screen and (max-width: 800px) {
+  :root {
+    //fonts
+    --font-size-1: 11px;
+    --font-size-2: 13px;
+    --font-size-3: 15px;
+    --font-size-4: 16px;
+    --font-size-5: 21px;
+    --font-size-6: 28px;
+    --font-size-7: 34px;
+    //Paddings
+    --padding-navbar-mobile-top: 55px;
+    --padding-main-sides: 30px;
+  }
+}
+@media screen and (max-width: 600px) {
+  :root {
+    //fonts
+    --font-size-1: 11px;
+    --font-size-2: 13px;
+    --font-size-3: 15px;
+    --font-size-4: 16px;
+    --font-size-5: 21px;
+    --font-size-6: 28px;
+    --font-size-7: 28px;
+    //Paddings
+    --padding-main-sides: 16px;
+  }
+}

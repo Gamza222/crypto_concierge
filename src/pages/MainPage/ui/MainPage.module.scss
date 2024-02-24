@@ -1,0 +1,22 @@
+.curve {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  @media screen and (max-width: 1200px) {
+    display: none;
+  }
+}
+
+.MainPage {
+  padding: var(--padding-main-sides);
+  padding-top: calc(
+    var(--logo-navbar-height) + var(--padding-navbar-top) + 83px
+  );
+
+  @media screen and (max-width: 1200px) {
+    padding-top: calc(
+      var(--logo-navbar-mobile-height) + var(--padding-navbar-mobile-top) + 43px
+    );
+  }
+}
