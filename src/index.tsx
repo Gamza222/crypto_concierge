@@ -4,26 +4,28 @@ import 'app/styles/index.scss';
 import 'shared/config/i18n/i18n';
 
 import { render } from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 import { ErrorBoundary } from 'app/providers/ErrorBoundary';
 import { StoreProvider } from 'app/providers/StoreProvider';
 
 import App from 'app/App';
+import { Loader } from 'widgets/Loader';
 
 render(
   <Suspense
     fallback={
       // <PageLoader />
-      <p>Loading...</p>
+      <Loader className='main-loader' />
     }
   >
-    <BrowserRouter>
+    <HashRouter>
       <StoreProvider>
         <ErrorBoundary>
           <App />
         </ErrorBoundary>
       </StoreProvider>
-    </BrowserRouter>
+    </HashRouter>
   </Suspense>,
   document.getElementById('root'),
 );
+//BrowserRouter

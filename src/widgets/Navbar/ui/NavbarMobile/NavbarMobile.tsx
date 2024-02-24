@@ -4,12 +4,14 @@ import cls from './NavbarMobile.module.scss';
 import Switch from 'shared/assets/icons/Switch.svg';
 import Logo from 'shared/assets/icons/Logo.svg';
 
-import { classNames } from 'shared/lib/classNames/classNames';
+import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import NavbarMobileOpened from './NavbarMobileOpened/NavbarMobileOpened';
+import { useWindowScrollPosition } from 'shared/lib/hooks/useWindowScrollPosition/useWindowScrollPosition';
+import { useWindowScrollTriggered } from 'shared/lib/hooks/useWindowScrollTriggered/useWindowScrollTriggered';
 
 interface NavbarMobileProps {
   className?: string;
@@ -36,10 +38,21 @@ const NavbarMobile = memo(({ className }: NavbarMobileProps) => {
   const hidden = { opacity: 0, y: -20 };
   const visible = { opacity: 1, y: 0, transition: { duration: 0.5 } };
 
+  const scrollPos = useWindowScrollPosition();
+
+  const getBlurred = () => {
+    if (scrollPos > 50) {
+      return true;
+    }
+    return false;
+  };
+  const mods: Mods = {
+    [cls.blurred]: getBlurred(),
+  };
   return (
     <mobileNavbarContext.Provider value={opened}>
       <motion.div
-        className={classNames(cls.NavbarMobile, {}, [className])}
+        className={classNames(cls.NavbarMobile, { ...mods }, [className])}
         initial={loaded ? false : 'hidden'}
         animate='visible'
         exit={{ opacity: 0, transition: { duration: 1 } }}

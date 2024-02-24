@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import cls from './Navbar.module.scss';
 
-import { classNames } from 'shared/lib/classNames/classNames';
+import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 
 import Logo from 'shared/assets/icons/Logo.svg';
@@ -12,6 +12,7 @@ import { NavbarItemList } from '../../model/items';
 import { Link } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { motion } from 'framer-motion';
+import { useWindowScrollPosition } from 'shared/lib/hooks/useWindowScrollPosition/useWindowScrollPosition';
 
 interface NavbarProps {
   className?: string;
@@ -21,9 +22,20 @@ const Navbar = memo(({ className }: NavbarProps) => {
   const { t } = useTranslation();
   const hidden = { opacity: 0, y: -20 };
   const visible = { opacity: 1, y: 0, transition: { duration: 0.5 } };
+  const scrollPos = useWindowScrollPosition();
+
+  const getBlurred = () => {
+    if (scrollPos > 50) {
+      return true;
+    }
+    return false;
+  };
+  const mods: Mods = {
+    [cls.blurred]: getBlurred(),
+  };
   return (
     <motion.div
-      className={classNames(cls.Navbar, {}, [className])}
+      className={classNames(cls.Navbar, { ...mods }, [className])}
       initial='hidden'
       animate='visible'
       exit={{ opacity: 0, transition: { duration: 1 } }}

@@ -1,13 +1,15 @@
 .NavbarMobile {
-  padding: 0 var(--padding-main-sides);
-  padding-top: var(--padding-navbar-mobile-top);
+  padding: var(--padding-navbar-mobile-top) var(--padding-main-sides);
   display: flex;
+  backdrop-filter: blur(6px);
+  z-index: 10;
   align-items: center;
   justify-content: space-between;
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
+  transition: backdrop-filter, background-color 0.1s linear;
 }
 
 .Logo {
@@ -24,4 +26,9 @@
     width: 40px;
     height: 21px;
   }
+}
+
+.blurred {
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.3);
 }

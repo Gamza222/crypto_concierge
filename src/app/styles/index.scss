@@ -17,6 +17,12 @@ body {
 
 .app {
   position: relative;
+  height: 200vh;
+  padding-top: calc(27px - var(--padding-navbar-top));
+
+  @media screen and (max-width: 1200px) {
+    padding-top: calc(50px - var(--padding-navbar-mobile-top));
+  }
 }
 
 .corner {
@@ -27,4 +33,17 @@ body {
   @media screen and (max-width: 1200px) {
     display: none;
   }
+}
+
+.main-loader {
+  top: 0;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  width: 100vw;
+  background: var(--overlay-color);
+  position: fixed;
 }

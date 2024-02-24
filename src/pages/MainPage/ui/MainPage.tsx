@@ -7,6 +7,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import useWindowDimensions from 'shared/lib/hooks/useWindowDimensions/useWindowDimensions';
 import MainPageSection1 from './MainPageSection1/MainPageSection1';
+import { Loader } from 'widgets/Loader';
 
 interface MainPageProps {
   className?: string;
