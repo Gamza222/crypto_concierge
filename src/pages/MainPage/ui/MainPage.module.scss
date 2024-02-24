@@ -10,6 +10,7 @@
 
 .MainPage {
   padding: var(--padding-main-sides);
+  position: relative;
   padding-top: calc(
     var(--logo-navbar-height) + var(--padding-navbar-top) + 83px
   );
