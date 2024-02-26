@@ -24,6 +24,7 @@ const MainPageSection2 = memo(({ className }: MainPageSection2Props) => {
   const { width, height } = useWindowDimensions();
 
   const mainRef = useRef<HTMLDivElement | null>(null);
+  const boxesRef = useRef<HTMLDivElement | null>(null);
   const mainRect = useElementRect(mainRef);
 
   const calculateAnimationTitle = useCalculateAnimation(
@@ -50,6 +51,16 @@ const MainPageSection2 = memo(({ className }: MainPageSection2Props) => {
     return false;
   }, [calculateAnimationTitle, mainRect?.bottom]);
 
+  useEffect(() => {
+    if (boxesRef.current) {
+      console.log(boxesRef.current?.style.height);
+
+      boxesRef.current.style.height = `${
+        boxesRef.current.clientHeight + 120
+      }px`;
+    }
+  }, [boxesRef]);
+
   return (
     <div
       className={classNames(cls.MainPageSection2, { ...mods }, [className])}
@@ -64,8 +75,11 @@ const MainPageSection2 = memo(({ className }: MainPageSection2Props) => {
       >
         <Title className={cls.Title}>{t('One platform, many solutions')}</Title>
       </motion.div>
-      <div
+      <motion.div
         className={cls.Boxes}
+        exit={{ opacity: 0, transition: { duration: 1 } }}
+        variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
+        ref={boxesRef}
         // initial='hidden'
         // animate='visible'
         // exit={{ opacity: 0, transition: { duration: 1 } }}
@@ -82,7 +96,7 @@ const MainPageSection2 = memo(({ className }: MainPageSection2Props) => {
             />
           );
         })}
-      </div>
+      </motion.div>
     </div>
   );
 });

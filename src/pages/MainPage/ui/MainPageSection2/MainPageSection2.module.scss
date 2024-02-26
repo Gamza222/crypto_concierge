@@ -50,8 +50,17 @@
   overflow-y: hidden;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
-  align-items: center;
+  row-gap: 0;
+  align-items: flex-start;
   justify-items: center;
+  --box-option-height: 300px;
+
+  @media screen and (max-width: 650px) {
+    --box-option-height: 285px;
+  }
+  @media screen and (max-width: 450px) {
+    --box-option-height: 265px;
+  }
 
   > div:nth-child(2) {
     grid-column: 1;
@@ -66,5 +75,7 @@
     margin-top: 70px;
     display: flex;
     flex-direction: column;
+    row-gap: 60px;
+    align-items: center;
   }
 }
