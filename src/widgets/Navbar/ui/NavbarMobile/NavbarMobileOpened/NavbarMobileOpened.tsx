@@ -1,58 +1,70 @@
-import React, { useState } from 'react';
+import React, { memo, useRef, useState } from 'react';
 import cls from './NavbarMobileOpened.module.scss';
 
 import Back from 'shared/assets/icons/Back.svg';
-
-import { classNames } from 'shared/lib/classNames/classNames';
-import { motion } from 'framer-motion';
-import { NavbarItemListMobile } from 'widgets/Navbar/model/items';
 import NavbarItem from '../../NavbarItem/NavbarItem';
+
+import { Mods, classNames } from 'shared/lib/classNames/classNames';
+import { NavbarItemListMobile } from 'widgets/Navbar/model/items';
+import { useClickOutside } from 'shared/lib/hooks/useClickOutside/useClickOutside';
 
 interface NavbarMobileOpenedProps {
   className?: string;
   closeNavbar: () => void;
 }
 
-const NavbarMobileOpened = ({
-  className,
-  closeNavbar,
-}: NavbarMobileOpenedProps) => {
-  const [closing, setClosing] = useState<boolean>(false);
-  const duration = 0.2;
-  const hidden = { opacity: 0, x: '100%' };
-  const visible = { opacity: 1, x: 0, transition: { duration: duration } };
+const NavbarMobileOpened = memo(
+  ({ className, closeNavbar }: NavbarMobileOpenedProps) => {
+    const [closing, setClosing] = useState<boolean>(false);
+    const duration = 0.2;
 
-  const onCloseNavbar = () => {
-    setClosing(true);
-    setTimeout(() => {
-      closeNavbar();
-    }, duration * 1000);
-  };
-  return (
-    <motion.div
-      className={classNames(cls.NavbarMobileOpened, {}, [className])}
-      initial={'hidden'}
-      animate={closing ? 'hidden' : 'visible'}
-      exit={{ opacity: 0, transition: { duration: 1 } }}
-      variants={{
-        hidden,
-        visible,
-      }}
-    >
-      <div className={cls.Header}>
-        <button className={cls.Back} onClick={onCloseNavbar}>
-          <Back className={cls.Back__pic} />
-        </button>
-      </div>
-      <nav className={cls.Items}>
-        {NavbarItemListMobile.map((item, key) => {
-          return (
-            <NavbarItem item={item} key={key} callback={onCloseNavbar} mobile />
-          );
-        })}
-      </nav>
-    </motion.div>
-  );
-};
+    const onCloseNavbar = () => {
+      setClosing(true);
+      setTimeout(() => {
+        closeNavbar();
+      }, (duration + 0.1) * 1000);
+    };
+
+    const navbarRef = useRef<HTMLDivElement>(null);
+    const mods: Mods = {
+      [cls.closing]: closing,
+    };
+    const modsOverlay: Mods = {
+      [cls.closingOverlay]: closing,
+    };
+
+    useClickOutside(navbarRef, onCloseNavbar);
+
+    return (
+      <>
+        <div className={classNames(cls.blackOverlay, { ...modsOverlay }, [])} />
+        <div
+          className={classNames(cls.NavbarMobileOpened, { ...mods }, [
+            className,
+          ])}
+          ref={navbarRef}
+        >
+          <div className={cls.Header}>
+            <button className={cls.Back} onClick={onCloseNavbar}>
+              <Back className={cls.Back__pic} />
+            </button>
+          </div>
+          <nav className={cls.Items}>
+            {NavbarItemListMobile.map((item, key) => {
+              return (
+                <NavbarItem
+                  item={item}
+                  key={key}
+                  callback={onCloseNavbar}
+                  mobile
+                />
+              );
+            })}
+          </nav>
+        </div>
+      </>
+    );
+  },
+);
 
 export default NavbarMobileOpened;

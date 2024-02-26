@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import NavbarMobileOpened from './NavbarMobileOpened/NavbarMobileOpened';
 import { useWindowScrollPosition } from 'shared/lib/hooks/useWindowScrollPosition/useWindowScrollPosition';
-import { useWindowScrollTriggered } from 'shared/lib/hooks/useWindowScrollTriggered/useWindowScrollTriggered';
 
 interface NavbarMobileProps {
   className?: string;
@@ -21,8 +20,6 @@ const NavbarMobile = memo(({ className }: NavbarMobileProps) => {
   const { t } = useTranslation();
   const [opened, setOpened] = useState<boolean>(false);
   const [loaded, setLoaded] = useState<boolean>(false);
-
-  const mobileNavbarContext = createContext<boolean>(false);
 
   const closeNavbar = useCallback(() => {
     setOpened(false);
@@ -36,7 +33,7 @@ const NavbarMobile = memo(({ className }: NavbarMobileProps) => {
   }, [loaded, setLoaded]);
 
   const hidden = { opacity: 0, y: -20 };
-  const visible = { opacity: 1, y: 0, transition: { duration: 0.5 } };
+  const visible = { opacity: 1, y: 0, transition: { duration: 0.8 } };
 
   const scrollPos = useWindowScrollPosition();
 

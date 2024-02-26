@@ -4,6 +4,7 @@ export function useWindowScrollPosition() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const handleScroll = () => {
     const position = window.scrollY;
+
     setScrollPosition(position);
   };
 

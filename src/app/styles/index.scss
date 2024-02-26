@@ -1,5 +1,6 @@
 @import './reset/reset.scss';
 @import './variables/global.scss';
+@import './mixins/mixins.scss';
 
 html {
   background: #000;
@@ -13,15 +14,15 @@ body {
   max-width: 2000px;
   margin: 0 auto;
   background: var(--overlay-color);
+  overflow-x: hidden;
 }
 
 .app {
   position: relative;
-  height: 200vh;
-  padding-top: calc(27px - var(--padding-navbar-top));
+  // padding-top: calc(27px - var(--padding-navbar-top));
 
   @media screen and (max-width: 1200px) {
-    padding-top: calc(50px - var(--padding-navbar-mobile-top));
+    // padding-top: calc(50px - var(--padding-navbar-mobile-top));
   }
 }
 

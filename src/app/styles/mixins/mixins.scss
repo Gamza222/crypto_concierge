@@ -1,0 +1,28 @@
+@mixin BeforeGradient {
+  content: '';
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%) rotate(0);
+  width: calc(400px);
+  height: calc(400px);
+  background: linear-gradient(
+    45deg,
+    var(--color-black) 0%,
+    var(--color-gold-1) 35%,
+    var(--color-gold-2) 45%
+  );
+  background-size: 200%;
+  border-radius: 10px;
+  animation: animatedgradient 3s linear infinite;
+}
+
+@keyframes animatedgradient {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next';
 import useWindowDimensions from 'shared/lib/hooks/useWindowDimensions/useWindowDimensions';
 import MainPageSection1 from './MainPageSection1/MainPageSection1';
 import { Loader } from 'widgets/Loader';
+import MainPageSection2 from './MainPageSection2/MainPageSection2';
 
 interface MainPageProps {
   className?: string;
@@ -20,9 +21,10 @@ const MainPage = ({ className }: MainPageProps) => {
   return (
     <>
       <Curve className={cls.curve} />
-      <div className={classNames(cls.MainPage, {}, [className])}>
+      <section className={classNames(cls.MainPage, {}, [className])}>
         <MainPageSection1 />
-      </div>
+        <MainPageSection2 />
+      </section>
     </>
   );
 };

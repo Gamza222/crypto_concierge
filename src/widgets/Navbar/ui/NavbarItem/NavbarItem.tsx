@@ -20,8 +20,6 @@ const NavbarItem = ({ className, item, mobile, callback }: NavbarItemProps) => {
   const clicked =
     `${location.pathname}` == `/${item.path !== '/' ? item.path : ''}`;
 
-  console.log(item.path);
-
   const mods: Mods = {
     [cls.mobile]: mobile,
     [cls.clicked]: clicked,

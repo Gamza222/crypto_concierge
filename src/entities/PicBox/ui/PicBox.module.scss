@@ -1,0 +1,63 @@
+@import '../../../app/styles/mixins/mixins.scss';
+
+.PicBox {
+  --border-radius-pic-box: 16px;
+  padding: 2px;
+  height: 300px;
+  width: 290px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  border-radius: var(--border-radius-pic-box);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    @include BeforeGradient;
+    width: 600px;
+    height: 600px;
+  }
+
+  @media screen and (max-width: 650px) {
+    height: 285px;
+    width: 270px;
+  }
+  @media screen and (max-width: 450px) {
+    height: 265px;
+    width: 250px;
+  }
+}
+
+.Content {
+  padding: 30px;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: var(--border-radius-pic-box);
+  background: var(--overlay-color);
+}
+
+.Pic {
+}
+
+.Info {
+  margin-top: 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+
+  &__title {
+    font-size: var(--font-size-4);
+    font-weight: var(--font-weight-extrabold);
+    color: var(--primary-color);
+  }
+
+  &__descr {
+    font-size: var(--font-size-2);
+    font-weight: var(--font-weight-thin);
+    color: var(--color-gray);
+    text-align: center;
+  }
+}

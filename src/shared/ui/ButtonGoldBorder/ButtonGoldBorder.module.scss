@@ -1,3 +1,5 @@
+@import '../../../app/styles/mixins/mixins.scss';
+
 .ButtonGoldBorder {
   position: relative;
   overflow: hidden;
@@ -5,32 +7,11 @@
   border-radius: 10px;
 
   &:before {
-    content: '';
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%) rotate(0);
-    width: calc(400px);
-    height: calc(400px);
-    background: linear-gradient(
-      45deg,
-      var(--color-black) 0%,
-      var(--color-gold-1) 35%,
-      var(--color-gold-2) 45%
-    );
-    background-size: 200%;
-    border-radius: 10px;
-    animation: animatedgradient 3s linear infinite;
+    @include BeforeGradient;
   }
 
   &:hover {
     .content {
-      //   background-repeat: no-repeat;
-      //   background: linear-gradient(
-      //     90deg,
-      //     var(--color-gold-1) 0%,
-      //     var(--color-gold-2) 50%
-      //   );
       background-color: var(--color-gold-2);
     }
 
@@ -58,6 +39,7 @@
 .content {
   display: flex;
   align-items: center;
+
   padding: 7px 25px;
   gap: 12px;
   background-color: var(--color-black);
@@ -91,15 +73,5 @@
   &__info {
     font-size: var(--font-size-2);
     font-weight: var(--font-weight-thin);
-  }
-}
-
-@keyframes animatedgradient {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-
-  100% {
-    transform: translate(-50%, -50%) rotate(360deg);
   }
 }

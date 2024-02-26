@@ -15,7 +15,7 @@ interface MainPageSection1Props {
 const MainPageSection1 = ({ className }: MainPageSection1Props) => {
   const { t } = useTranslation();
 
-  const visible = { opacity: 1, y: 0, transition: { duration: 0.5 } };
+  const visible = { opacity: 1, y: 0, transition: { duration: 0.8 } };
 
   const itemVariants = {
     hidden: { opacity: 0, y: -10 },
@@ -26,7 +26,7 @@ const MainPageSection1 = ({ className }: MainPageSection1Props) => {
       initial='hidden'
       animate='visible'
       exit={{ opacity: 0, transition: { duration: 1 } }}
-      variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
+      variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
       className={classNames(cls.MainPageSection1, {}, [className])}
     >
       <motion.div

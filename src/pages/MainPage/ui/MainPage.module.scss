@@ -2,6 +2,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  height: 400px;
 
   @media screen and (max-width: 1200px) {
     display: none;
@@ -9,15 +10,12 @@
 }
 
 .MainPage {
+  --padding-top-main-page: 85px;
   padding: var(--padding-main-sides);
   position: relative;
-  padding-top: calc(
-    var(--logo-navbar-height) + var(--padding-navbar-top) + 83px
-  );
+  padding-top: var(--padding-top-main-page);
 
   @media screen and (max-width: 1200px) {
-    padding-top: calc(
-      var(--logo-navbar-mobile-height) + var(--padding-navbar-mobile-top) + 43px
-    );
+    --padding-top-main-page: 105px;
   }
 }

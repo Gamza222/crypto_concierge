@@ -44,8 +44,8 @@
 
   //Paddings
   --padding-main-sides: 170px;
-  --padding-navbar-mobile-top: 20px;
-  --padding-navbar-top: 20px;
+  --padding-navbar-mobile-top: 35px;
+  --padding-navbar-top: 30px;
 
   //indexes
 
@@ -53,6 +53,8 @@
   --overlay-color: linear-gradient(180deg, #373737 0%, #1d1d1d 100%);
   --primary-color: #fff;
   --color-black: #000;
+  --color-gray: rgba(255, 255, 255, 0.6);
+
   --color-gold-1: #af8a53;
   --color-gold-2: #ffeaa5;
 }
@@ -109,7 +111,7 @@
     --font-size-4: 16px;
     --font-size-5: 21px;
     --font-size-6: 28px;
-    --font-size-7: 28px;
+    --font-size-7: 36px;
     //Paddings
     --padding-main-sides: 16px;
   }
