@@ -1,0 +1,26 @@
+.TextBox {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__title {
+    font-size: var(--font-size-5);
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-color);
+  }
+  &__descr {
+    font-size: var(--font-size-3);
+    font-weight: var(--font-weight-thin);
+    color: var(--primary-color);
+  }
+}
+
+.start {
+  text-align: start;
+}
+.center {
+  text-align: center;
+}
+.end {
+  text-align: end;
+}

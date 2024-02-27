@@ -1,0 +1,50 @@
+.FooterMobile {
+  background: var(--overlay-color);
+  width: calc(var(--padding-main-sides) * 2 + 100%);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 40px var(--padding-main-sides);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &::before {
+    content: '';
+    background: linear-gradient(
+      90deg,
+      var(--color-gold-1),
+      var(--color-gold-2)
+    );
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.FooterSocial {
+  text-align: center;
+}
+
+.Logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 70px;
+  justify-content: center;
+  &__pic {
+    width: 43px;
+    height: 87px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .Logo {
+    &__pic {
+      width: 33px;
+      height: 67px;
+    }
+  }
+}

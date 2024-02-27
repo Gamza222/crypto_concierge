@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './ButtonGoldBorder.module.scss';
 
 interface ButtonGoldBorderProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
-  title: string;
-  text: string;
-  Pic: React.VFC<React.SVGProps<SVGSVGElement>>;
+  title?: string;
+  text?: string;
+  Pic?: React.VFC<React.SVGProps<SVGSVGElement>>;
+  children?: ReactNode | undefined;
 }
 
 const ButtonGoldBorder = ({
@@ -15,16 +16,25 @@ const ButtonGoldBorder = ({
   title,
   text,
   Pic,
+  children,
   ...props
 }: ButtonGoldBorderProps) => {
   return (
-    <button className={classNames(cls.ButtonGoldBorder, {}, [className])}>
+    <button
+      className={classNames(cls.ButtonGoldBorder, {}, [className])}
+      {...props}
+    >
       <div className={cls.content}>
-        <Pic />
-        <div className={cls.Text}>
-          <p className={cls.Text__title}>{title}</p>
-          <p className={cls.Text__info}>{text}</p>
-        </div>
+        {title && text && Pic && (
+          <>
+            <Pic />
+            <div className={cls.Text}>
+              <p className={cls.Text__title}>{title}</p>
+              <p className={cls.Text__info}>{text}</p>
+            </div>
+          </>
+        )}
+        {children}
       </div>
     </button>
   );

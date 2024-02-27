@@ -7,7 +7,7 @@
   position: sticky;
   top: 0;
   margin: 0 auto;
-  z-index: 1;
+  z-index: 10;
   max-width: 2000px;
   transition: backdrop-filter, background-color 0.1s linear;
 }

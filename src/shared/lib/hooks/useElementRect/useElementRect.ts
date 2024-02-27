@@ -1,19 +1,20 @@
 import { RefObject, useEffect, useState } from 'react';
 
-export function useElementRect(ref: RefObject<HTMLElement>) {
-  const [rect, setRect] = useState<DOMRect | null>(getRect());
+export function useElementRect(ref: RefObject<HTMLElement>, show?: boolean) {
+  const [rect, setRect] = useState<DOMRect | null>();
 
-  function getRect() {
-    if (ref?.current) {
-      const elemRect = ref.current.getBoundingClientRect();
+  function getRect(elem: HTMLElement) {
+    if (elem) {
+      const elemRect = elem.getBoundingClientRect();
       return elemRect;
     }
-    return null;
   }
 
   useEffect(() => {
     function handleResize() {
-      setRect(getRect());
+      if (ref.current) {
+        setRect(getRect(ref.current));
+      }
     }
     window.addEventListener('resize', handleResize);
     window.addEventListener('scroll', handleResize);
@@ -23,8 +24,14 @@ export function useElementRect(ref: RefObject<HTMLElement>) {
       window.removeEventListener('scroll', handleResize);
     };
   }, []);
+
   useEffect(() => {
-    setRect(getRect());
+    if (ref.current) {
+      const resizeObserver = new ResizeObserver(() => {
+        setRect(getRect(ref.current!));
+      });
+      resizeObserver.observe(ref.current);
+    }
   }, [ref]);
 
   return rect;

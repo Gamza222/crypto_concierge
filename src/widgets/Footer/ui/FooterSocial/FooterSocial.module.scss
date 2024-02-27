@@ -1,0 +1,144 @@
+.FooterSocial {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.Title {
+  font-size: var(--font-size-3);
+  font-weight: var(--font-weight-bold);
+  color: var(--primary-color);
+}
+
+.Items {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.Link {
+  padding: 2px;
+  &__pic {
+    height: 35px;
+    width: 35px;
+
+    @media screen and (max-width: 600px) {
+      height: 31px;
+      width: 31px;
+    }
+  }
+
+  @media screen and (hover: hover) {
+    &:hover {
+      div:nth-child(1) {
+        filter: brightness(0.4);
+
+        background: linear-gradient(180deg, #373737 0%, #1d1d1d 50%) !important;
+        .Facebook {
+          g {
+            path {
+              stroke: none !important;
+            }
+          }
+        }
+        .Github {
+          g {
+            path {
+              stroke: none !important;
+            }
+          }
+        }
+        .Instagram {
+          g {
+            path {
+              stroke: none !important;
+            }
+            path:nth-child(2) {
+              fill: #fff !important;
+            }
+          }
+        }
+        .Twitter {
+          g {
+            path {
+              stroke: none !important;
+            }
+            path:nth-child(2) {
+              fill: #fff !important;
+            }
+          }
+        }
+        .Discord {
+          g {
+            path {
+              stroke: none !important;
+            }
+            path:nth-child(2) {
+              fill: #fff !important;
+            }
+          }
+        }
+        .Reddit {
+          g {
+            path {
+              stroke: none !important;
+            }
+            path:nth-child(2) {
+              fill: #fff !important;
+            }
+          }
+        }
+        .Telegram {
+          g {
+            path {
+              stroke: none !important;
+            }
+            path:nth-child(2) {
+              fill: #fff !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.Link div:nth-child(1) {
+  svg {
+    g {
+      path {
+        transition: all 0.1s linear;
+      }
+    }
+  }
+  background: linear-gradient(180deg, #373737 0%, #1d1d1d 50%);
+  padding: 0;
+}
+
+@media screen and (max-width: 1200px) {
+  .Items {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .Items {
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+  }
+  .Link {
+  }
+}
+@media screen and (max-width: 350px) {
+  .Items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+  }
+  .Link {
+  }
+  .Title {
+    text-align: start;
+  }
+}

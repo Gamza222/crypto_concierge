@@ -15,7 +15,17 @@
   position: relative;
   padding-top: var(--padding-top-main-page);
 
-  @media screen and (max-width: 1200px) {
-    --padding-top-main-page: 105px;
+  @media screen and (max-height: 850px) {
+    --padding-top-main-page: 65px;
+  }
+
+  @media screen and (max-height: 750px) {
+    --padding-top-main-page: 35px;
+  }
+  @media screen and (max-width: 650px) {
+    --padding-top-main-page: 50px;
+  }
+  @media screen and (max-width: 550px) {
+    --padding-top-main-page: 40px;
   }
 }

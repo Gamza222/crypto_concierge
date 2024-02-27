@@ -1,17 +1,20 @@
-import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
+import React, {
+  memo,
+  useCallback,
+  useContext,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import cls from './MainPageSection2.module.scss';
 
 import Title from 'shared/ui/Title/Title';
-import useWindowDimensions from 'shared/lib/hooks/useWindowDimensions/useWindowDimensions';
 
 import { Mods, classNames } from 'shared/lib/classNames/classNames';
-import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { useElementRect } from 'shared/lib/hooks/useElementRect/useElementRect';
-import { useWindowScrollPosition } from 'shared/lib/hooks/useWindowScrollPosition/useWindowScrollPosition';
-import { useCalculateAnimation } from 'shared/lib/hooks/useCalculateAnimation/useCalculateAnimation';
 import { optionsData } from 'pages/MainPage/data/data';
 import { PicBox } from 'entities/PicBox';
+import { AnimationBox } from 'entities/AnimationBox';
 
 interface MainPageSection2Props {
   className?: string;
@@ -19,85 +22,62 @@ interface MainPageSection2Props {
 
 const MainPageSection2 = memo(({ className }: MainPageSection2Props) => {
   const { t } = useTranslation();
-
-  const scrollPos = useWindowScrollPosition();
-  const { width, height } = useWindowDimensions();
-
-  const mainRef = useRef<HTMLDivElement | null>(null);
-  const boxesRef = useRef<HTMLDivElement | null>(null);
-  const mainRect = useElementRect(mainRef);
-
-  const calculateAnimationTitle = useCalculateAnimation(
-    400,
-    Number(mainRect?.top),
-    Number(mainRect?.bottom),
-    height,
-    Number(mainRect?.height),
-  );
+  const [exitAnimation, setExitAnimation] = useState(false);
 
   const animationTextVariants = {
     hidden: { y: 20, opacity: 0 },
     visible: { y: 0, opacity: 1, transition: { duration: 0.6 } },
   };
 
-  const mods: Mods = {
-    [cls.animateLine]: calculateAnimationTitle,
+  const animationBoxVariants = {
+    hidden: { y: 60, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.6 } },
   };
 
-  const exitBoxesAnimation = useCallback(() => {
-    if (!calculateAnimationTitle || Number(mainRect?.bottom) < 0) {
-      return true;
-    }
-    return false;
-  }, [calculateAnimationTitle, mainRect?.bottom]);
+  const mods: Mods = {
+    [cls.animateLine]: !exitAnimation,
+  };
 
-  useEffect(() => {
-    if (boxesRef.current) {
-      console.log(boxesRef.current?.style.height);
-
-      boxesRef.current.style.height = `${
-        boxesRef.current.clientHeight + 120
-      }px`;
-    }
-  }, [boxesRef]);
+  const setterExitAnimation = useCallback((value: boolean) => {
+    setExitAnimation(value);
+  }, []);
 
   return (
-    <div
+    <AnimationBox
       className={classNames(cls.MainPageSection2, { ...mods }, [className])}
-      ref={mainRef}
+      visiblePart={400}
+      variants={{}}
+      exitAnimation={exitAnimation}
+      setExit={setterExitAnimation}
     >
-      <motion.div
-        initial='hidden'
-        animate={calculateAnimationTitle ? 'visible' : 'hidden'}
-        exit={'hidden'}
-        variants={animationTextVariants}
+      <AnimationBox
         className={cls.titleBox}
+        visiblePart={400}
+        variants={animationTextVariants}
+        exitAnimation={exitAnimation}
       >
         <Title className={cls.Title}>{t('One platform, many solutions')}</Title>
-      </motion.div>
-      <motion.div
-        className={cls.Boxes}
-        exit={{ opacity: 0, transition: { duration: 1 } }}
-        variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
-        ref={boxesRef}
-        // initial='hidden'
-        // animate='visible'
-        // exit={{ opacity: 0, transition: { duration: 1 } }}
-        // variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
-      >
+      </AnimationBox>
+      <div className={cls.Boxes}>
         {optionsData.map((option, key) => {
           return (
-            <PicBox
-              key={key}
-              title={option.title}
-              description={option.description}
-              Pic={option.Pic}
-              exitAnimation={exitBoxesAnimation}
-            />
+            <AnimationBox
+              visiblePart={400}
+              variants={animationBoxVariants}
+              exitAnimation={exitAnimation}
+            >
+              <PicBox
+                key={key}
+                title={option.title}
+                description={option.description}
+                Pic={option.Pic}
+                exitAnimation={exitAnimation}
+              />
+            </AnimationBox>
           );
         })}
-      </motion.div>
-    </div>
+      </div>
+    </AnimationBox>
   );
 });
 

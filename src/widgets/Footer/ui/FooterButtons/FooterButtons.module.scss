@@ -1,0 +1,64 @@
+.FooterButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.Buttons {
+  display: flex;
+  gap: 4px;
+  row-gap: 12px;
+  flex-wrap: wrap;
+}
+
+.Button {
+  &__text {
+    font-size: var(--font-size-2);
+    font-weight: var(--font-weight-thin);
+    color: var(--color-black);
+    text-transform: none;
+  }
+}
+.Button div:nth-child(1) {
+  border-radius: 2px;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 14px;
+  align-items: center;
+  padding: 9px 22px;
+}
+
+.Apple {
+  width: 16px;
+  height: 18px;
+}
+
+.Playmarket {
+  width: 17px;
+  height: 18px;
+}
+
+.Anroid {
+  width: 16px;
+  height: 18px;
+}
+
+@media screen and (max-width: 1200px) {
+  .FooterButtons {
+    margin-top: 70px;
+    text-align: center;
+  }
+
+  .Buttons {
+    flex-direction: column;
+
+    > button {
+      width: 100%;
+      > div {
+        border-radius: 8px !important;
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}

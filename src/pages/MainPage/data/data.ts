@@ -1,4 +1,5 @@
 import { PicBoxData } from 'entities/PicBox';
+import { TextBoxData } from 'shared/ui/TextBox/TextBox';
 
 export const optionsData: PicBoxData[] = [
   {
@@ -20,5 +21,29 @@ export const optionsData: PicBoxData[] = [
     Pic: null,
     title: 'Cash Delivery',
     description: 'Exchange crypto for cash and vice versa using our couriers',
+  },
+];
+
+// to change go to public/locales/en/learnData
+export const learnData: TextBoxData[] = [
+  {
+    title: 'title1',
+    descr: 'descr1',
+  },
+  {
+    title: 'title2',
+    descr: 'descr2',
+  },
+  {
+    title: 'title3',
+    descr: 'descr3',
+  },
+  {
+    title: 'title4',
+    descr: 'descr4',
+  },
+  {
+    title: 'title5',
+    descr: 'descr5',
   },
 ];

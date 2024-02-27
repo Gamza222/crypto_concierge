@@ -9,28 +9,35 @@
   &:before {
     @include BeforeGradient;
   }
-
-  &:hover {
-    .content {
-      background-color: var(--color-gold-2);
-    }
-
-    svg {
-      g {
-        path {
-          stroke: var(--color-black);
+  @media screen and (hover: hover) {
+    &:hover {
+      &:hover {
+        .content {
+          background: linear-gradient(
+            90deg,
+            var(--color-gold-1) 0.01%,
+            var(--color-gold-2) 60%
+          );
         }
-        path:nth-child(2) {
-          fill: var(--color-black);
+
+        svg {
+          g {
+            path {
+              stroke: var(--color-black);
+            }
+            path:nth-child(2) {
+              fill: var(--color-black);
+            }
+          }
         }
-      }
-    }
-    .Text {
-      &__title {
-        color: var(--color-black);
-      }
-      &__info {
-        color: var(--color-black);
+        .Text {
+          &__title {
+            color: var(--color-black);
+          }
+          &__info {
+            color: var(--color-black);
+          }
+        }
       }
     }
   }

@@ -1,0 +1,33 @@
+@import '../../../app/styles/mixins/mixins.scss';
+
+.ContentBox {
+  --border-radius-content-box: 17px;
+  padding: 2px;
+  height: var(--box-option-height);
+  width: var(--box-option-width);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  border-radius: var(--border-radius-content-box);
+  position: relative;
+  box-shadow: -17px 23px 51.2px 0px rgba(0, 0, 0, 0.61);
+
+  &::before {
+    @include BeforeGradient;
+    border-radius: var(--border-radius-content-box);
+  }
+}
+
+.Content {
+  padding: 30px;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: var(--border-radius-content-box);
+  background: var(--overlay-color);
+
+  display: flex;
+  gap: 50px;
+  flex-direction: column;
+}

@@ -46,29 +46,43 @@
 .Boxes {
   margin-top: 105px;
   display: grid;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  // overflow-x: hidden;
+  // overflow-y: hidden;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
-  row-gap: 0;
   align-items: flex-start;
   justify-items: center;
   --box-option-height: 300px;
+  --box-option-width: 290px;
 
   @media screen and (max-width: 650px) {
     --box-option-height: 285px;
+    --box-option-width: 275px;
   }
   @media screen and (max-width: 450px) {
     --box-option-height: 265px;
+    --box-option-width: 250px;
+  }
+  @media screen and (max-width: 350px) {
+    --box-option-height: 255px;
+    --box-option-width: 240px;
   }
 
+  > div:nth-child(1) {
+    justify-self: flex-start;
+  }
   > div:nth-child(2) {
     grid-column: 1;
     grid-row: 2;
+    justify-self: flex-start;
   }
   > div:nth-child(3) {
     grid-column: 2;
     grid-row: 1;
+    justify-self: flex-end;
+  }
+  > div:nth-child(4) {
+    justify-self: flex-end;
   }
 
   @media screen and (max-width: 850px) {
