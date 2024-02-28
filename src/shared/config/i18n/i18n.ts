@@ -28,7 +28,8 @@ if (isProduction) {
     );
   }
   i18nConfig.backend = {
-    loadPath: '/crypto_concierge/public/locales/{{lng}}/translation.json', // Example endpoint to fetch translations
+    loadPath: '/crypto_concierge/public/locales/{{lng}}/{{ns}}.json', // Example endpoint to fetch translations
+    // Example endpoint to fetch translations
     // Other production-specific backend configurations...
   };
 }

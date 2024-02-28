@@ -10,6 +10,7 @@
   z-index: 10;
   max-width: 2000px;
   transition: backdrop-filter, background-color 0.1s linear;
+  transform-origin: top center;
 }
 
 .Logo {
@@ -41,4 +42,17 @@
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+.hidden {
+  pointer-events: none;
+}
+
+@keyframes navbarHideAnimation {
+  0% {
+    opacity: 0 !important;
+  }
+  0% {
+    transform: rotateX(-5deg) !important;
+  }
 }

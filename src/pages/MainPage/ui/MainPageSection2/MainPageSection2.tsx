@@ -65,6 +65,7 @@ const MainPageSection2 = memo(({ className }: MainPageSection2Props) => {
               visiblePart={400}
               variants={animationBoxVariants}
               exitAnimation={exitAnimation}
+              key={key}
             >
               <PicBox
                 key={key}

@@ -4,8 +4,6 @@ import cls from './PicBox.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 
-import { AnimationBox } from 'entities/AnimationBox';
-
 export interface PicBoxData {
   Pic: React.VFC<React.SVGProps<SVGSVGElement>> | null;
   title: string;
@@ -17,19 +15,8 @@ interface PicBoxProps extends PicBoxData {
   exitAnimation: boolean;
 }
 
-const PicBox = ({
-  className,
-  title,
-  description,
-  Pic,
-  exitAnimation,
-}: PicBoxProps) => {
+const PicBox = ({ className, title, description, Pic }: PicBoxProps) => {
   const { t } = useTranslation();
-
-  const animationBoxVariants = {
-    hidden: { opacity: 0, y: 60 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  };
 
   return (
     <div className={classNames(cls.PicBox, {}, [className])}>

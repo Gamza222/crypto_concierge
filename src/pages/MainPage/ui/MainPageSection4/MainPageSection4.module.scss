@@ -68,3 +68,11 @@
   gap: 15px;
   align-items: center;
 }
+
+@media screen and (max-width: 750px) {
+  .Button {
+    > div {
+      width: 190px;
+    }
+  }
+}

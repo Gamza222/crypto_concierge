@@ -1,4 +1,10 @@
-import React, { createContext, memo, useCallback, useState } from 'react';
+import React, {
+  createContext,
+  memo,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react';
 import cls from './NavbarMobile.module.scss';
 
 import Switch from 'shared/assets/icons/Switch.svg';
@@ -11,6 +17,7 @@ import { Link } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import NavbarMobileOpened from './NavbarMobileOpened/NavbarMobileOpened';
 import { useWindowScrollPosition } from 'shared/lib/hooks/useWindowScrollPosition/useWindowScrollPosition';
+import usePreviousValue from 'shared/lib/hooks/usePreviousValue/usePreviousValue';
 
 interface NavbarMobileProps {
   className?: string;
@@ -18,6 +25,8 @@ interface NavbarMobileProps {
 
 const NavbarMobile = memo(({ className }: NavbarMobileProps) => {
   const { t } = useTranslation();
+  const scrollHeight = 55;
+  const [navbarHide, setNavbarHide] = useState(false);
   const [opened, setOpened] = useState<boolean>(false);
   const [loaded, setLoaded] = useState<boolean>(false);
 
@@ -33,10 +42,19 @@ const NavbarMobile = memo(({ className }: NavbarMobileProps) => {
   }, [loaded, setLoaded]);
 
   const hidden = { opacity: 0, y: -20 };
+  const hidden2 = { opacity: 0, y: -20, transition: { duration: 0.1 } };
   const visible = { opacity: 1, y: 0, transition: { duration: 0.8 } };
 
   const scrollPos = useWindowScrollPosition();
+  const prevScrollPos = usePreviousValue(scrollPos);
 
+  useEffect(() => {
+    if (prevScrollPos) {
+      scrollPos > scrollHeight && prevScrollPos > scrollPos
+        ? setNavbarHide(true)
+        : setNavbarHide(false);
+    }
+  }, [scrollPos]);
   const getBlurred = () => {
     if (scrollPos > 50) {
       return true;
@@ -51,7 +69,7 @@ const NavbarMobile = memo(({ className }: NavbarMobileProps) => {
       <motion.div
         className={classNames(cls.NavbarMobile, { ...mods }, [className])}
         initial={loaded ? false : 'hidden'}
-        animate='visible'
+        animate={navbarHide ? hidden2 : visible}
         exit={{ opacity: 0, transition: { duration: 1 } }}
         variants={{
           hidden,

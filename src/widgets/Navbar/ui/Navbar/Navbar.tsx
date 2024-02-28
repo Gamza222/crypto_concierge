@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import cls from './Navbar.module.scss';
 
 import { Mods, classNames } from 'shared/lib/classNames/classNames';
@@ -13,6 +13,7 @@ import { Link } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { motion } from 'framer-motion';
 import { useWindowScrollPosition } from 'shared/lib/hooks/useWindowScrollPosition/useWindowScrollPosition';
+import usePreviousValue from 'shared/lib/hooks/usePreviousValue/usePreviousValue';
 
 interface NavbarProps {
   className?: string;
@@ -20,24 +21,40 @@ interface NavbarProps {
 
 const Navbar = memo(({ className }: NavbarProps) => {
   const { t } = useTranslation();
+
+  const scrollHeight = 55;
+  const [navbarHide, setNavbarHide] = useState(false);
+
   const hidden = { opacity: 0, y: -20 };
+  const hidden2 = { opacity: 0, y: -20, transition: { duration: 0.1 } };
   const visible = { opacity: 1, y: 0, transition: { duration: 0.5 } };
+
   const scrollPos = useWindowScrollPosition();
+  const prevScrollPos = usePreviousValue(scrollPos);
+
+  useEffect(() => {
+    if (prevScrollPos) {
+      scrollPos > scrollHeight && prevScrollPos > scrollPos
+        ? setNavbarHide(true)
+        : setNavbarHide(false);
+    }
+  }, [scrollPos]);
 
   const getBlurred = () => {
-    if (scrollPos > 50) {
+    if (scrollPos > scrollHeight) {
       return true;
     }
     return false;
   };
   const mods: Mods = {
     [cls.blurred]: getBlurred(),
+    [cls.hidden]: navbarHide,
   };
   return (
     <motion.div
       className={classNames(cls.Navbar, { ...mods }, [className])}
       initial='hidden'
-      animate='visible'
+      animate={navbarHide ? hidden2 : visible}
       exit={{ opacity: 0, transition: { duration: 1 } }}
       variants={{
         hidden,

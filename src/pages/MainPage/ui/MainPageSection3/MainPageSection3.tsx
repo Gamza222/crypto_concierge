@@ -56,12 +56,13 @@ const MainPageSection3 = ({ className }: MainPageSection3Props) => {
           {learnData.map((data, key) => {
             return (
               <AnimationBox
-                visiblePart={400}
+                visiblePart={key == 0 ? 100 : 220}
                 variants={animationTextVariants}
                 exitAnimation={exitAnimation}
                 className={classNames(cls.Item, {
                   [cls.ItemLeft]: key % 2 === 0,
                 })}
+                key={key}
               >
                 <div className={cls.Item__pic}></div>
                 <TextBox
