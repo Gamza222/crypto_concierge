@@ -23,6 +23,132 @@
   animation: animatedgradient 3s linear infinite;
 }
 
+@mixin Facebook($color, $hoverColor, $width) {
+  width: $width;
+  height: $width;
+  > g {
+    > path {
+      fill: $color;
+      transition: var(--pic-transiction);
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      > g {
+        > path {
+          fill: $hoverColor;
+        }
+      }
+    }
+  }
+}
+
+@mixin Instagram($color, $hoverColor, $width) {
+  width: $width;
+  height: $width;
+
+  > g {
+    > path:nth-child(2) {
+      fill: $color;
+      transition: var(--pic-transiction);
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      > g {
+        > path:nth-child(2) {
+          fill: $hoverColor;
+        }
+      }
+    }
+  }
+}
+
+@mixin Twitter($color, $hoverColor, $width) {
+  width: $width;
+  height: $width;
+
+  > g {
+    > path:nth-child(2) {
+      fill: $color;
+      transition: var(--pic-transiction);
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      > g {
+        > path:nth-child(2) {
+          fill: $hoverColor;
+        }
+      }
+    }
+  }
+}
+@mixin Discord($color, $hoverColor, $width) {
+  width: $width;
+  height: $width;
+
+  > path:nth-child(2) {
+    fill: $color;
+    transition: var(--pic-transiction);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      > path:nth-child(2) {
+        fill: $hoverColor;
+      }
+    }
+  }
+}
+
+@mixin Twitter($color, $hoverColor, $width) {
+  width: $width;
+  height: $width;
+
+  > g {
+    > path:nth-child(2) {
+      fill: $color;
+      transition: var(--pic-transiction);
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      > g {
+        > path:nth-child(2) {
+          fill: $hoverColor;
+        }
+      }
+    }
+  }
+}
+
+@mixin Telegram($color, $hoverColor, $width) {
+  width: $width;
+  height: $width;
+
+  > g {
+    > path:nth-child(2) {
+      fill: $color;
+      transition: var(--pic-transiction);
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      > g {
+        > path:nth-child(2) {
+          fill: $hoverColor;
+        }
+      }
+    }
+  }
+}
+
 @keyframes animatedgradient {
   0% {
     --angle: 0deg;

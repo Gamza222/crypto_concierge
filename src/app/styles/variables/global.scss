@@ -57,6 +57,8 @@
 
   --color-gold-1: #af8a53;
   --color-gold-2: #ffeaa5;
+
+  --pic-transiction: all 0.1s linear;
 }
 
 @media screen and (max-width: 1460px) {
@@ -67,7 +69,7 @@
     --font-size-3: 16px;
     --font-size-4: 22px;
     --font-size-5: 26px;
-    --font-size-6: 35px;
+    // --font-size-6: 35px;
     --font-size-7: 42px;
 
     //Paddings
@@ -82,7 +84,7 @@
     --font-size-3: 15px;
     --font-size-4: 18px;
     --font-size-5: 24px;
-    --font-size-6: 30px;
+    // --font-size-6: 34px;
     --font-size-7: 36px;
     //Paddings
     --padding-main-sides: 70px;
@@ -96,7 +98,7 @@
     --font-size-3: 15px;
     --font-size-4: 16px;
     --font-size-5: 21px;
-    --font-size-6: 28px;
+    // --font-size-6: 34px;
     --font-size-7: 34px;
     //Paddings
     --padding-main-sides: 30px;
@@ -110,9 +112,9 @@
     --font-size-3: 15px;
     --font-size-4: 16px;
     --font-size-5: 21px;
-    --font-size-6: 28px;
+    // --font-size-6: 34px;
     --font-size-7: 36px;
     //Paddings
-    --padding-main-sides: 40px;
+    --padding-main-sides: 25px;
   }
 }

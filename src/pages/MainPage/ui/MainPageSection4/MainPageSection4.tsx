@@ -2,13 +2,10 @@ import React, { useCallback, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './MainPageSection4.module.scss';
 import Title from 'shared/ui/Title/Title';
-import PhonePic from 'shared/assets/icons/phone.svg';
-import PCPic from 'shared/assets/icons/computer.svg';
-
-import ButtonGold from 'shared/ui/ButtonGold/ButtonGold';
 
 import { useTranslation } from 'react-i18next';
 import { AnimationBox } from 'entities/AnimationBox';
+import { DownloadGoldenButtons } from 'entities/DownloadGoldenButtons';
 
 interface MainPageSection4Props {
   className?: string;
@@ -54,20 +51,7 @@ const MainPageSection4 = ({ className }: MainPageSection4Props) => {
         variants={animationTextVariants}
         exitAnimation={exitAnimation}
       >
-        <ButtonGold onClick={() => {}} className={cls.Button}>
-          <PhonePic className={cls.Button__pic} />
-          <div className={cls.Button__text}>
-            <p className={cls.Button__text__title}>{t('Download')}</p>
-            <p className={cls.Button__text__info}>{t('Mobile App')}</p>
-          </div>
-        </ButtonGold>
-        <ButtonGold onClick={() => {}} className={cls.Button}>
-          <PCPic className={cls.Button__pic} />
-          <div className={cls.Button__text}>
-            <p className={cls.Button__text__title}>{t('Launch')}</p>
-            <p className={cls.Button__text__info}>{t('Web App')}</p>
-          </div>
-        </ButtonGold>
+        <DownloadGoldenButtons className={cls.GoldernButtons} />
       </AnimationBox>
     </AnimationBox>
   );

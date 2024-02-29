@@ -1,5 +1,7 @@
 import { MainPageAsync } from 'pages/MainPage';
 import { NotFoundPageAsync } from 'pages/NotFoundPage';
+import { SupportPage } from 'pages/SupportPage';
+import Wallet from 'pages/Wallet/ui/Wallet';
 import React from 'react';
 
 import { type RouteProps } from 'react-router-dom';
@@ -38,7 +40,7 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
   },
   [AppRoutes.WALLET]: {
     path: RoutePath.wallet,
-    element: <NotFoundPageAsync />,
+    element: <Wallet />,
   },
   [AppRoutes.OUR_FEATURES]: {
     path: RoutePath['our_features'],
@@ -50,7 +52,7 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
   },
   [AppRoutes.SUPPORT]: {
     path: RoutePath.support,
-    element: <NotFoundPageAsync />,
+    element: <SupportPage />,
   },
   [AppRoutes.ABOUT_US]: {
     path: RoutePath.about_us,
