@@ -9,26 +9,25 @@
   margin: 0 auto;
   z-index: 10;
   max-width: 2000px;
-  transition: backdrop-filter, background-color 0.1s linear;
   transform-origin: top center;
+  margin-bottom: var(--margin-navbar-bottom);
 }
 
 .Logo {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 16px;
   height: fit-content;
   &__title {
     font-family: var(--font-family-logo);
     font-size: var(--font-size-3);
     color: var(--primary-color);
     text-transform: uppercase;
-    filter: drop-shadow(0px 0px 4px black);
+    filter: drop-shadow(2px 2px 2px #000);
   }
 
   &__pic {
-    width: 32px;
-    height: 62px;
+    height: var(--logo-navbar-height);
   }
 }
 
@@ -39,9 +38,10 @@
 }
 
 .blurred {
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background-color: rgba(10, 10, 10, 0.7);
+  filter: none;
 }
 
 .hidden {

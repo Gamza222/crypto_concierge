@@ -13,7 +13,7 @@
   --padding-top-main-page: 85px;
   padding: var(--padding-main-sides);
   position: relative;
-  padding-top: var(--padding-top-main-page);
+  padding-top: 0;
 
   @media screen and (max-height: 850px) {
     --padding-top-main-page: 65px;

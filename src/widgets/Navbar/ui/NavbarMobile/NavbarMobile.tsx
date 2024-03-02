@@ -1,7 +1,7 @@
 import React, {
-  createContext,
   memo,
   useCallback,
+  useContext,
   useEffect,
   useState,
 } from 'react';
@@ -9,15 +9,16 @@ import cls from './NavbarMobile.module.scss';
 
 import Switch from 'shared/assets/icons/Switch.svg';
 import Logo from 'shared/assets/icons/Logo.svg';
+import usePreviousValue from 'shared/lib/hooks/usePreviousValue/usePreviousValue';
+import NavbarMobileOpened from './NavbarMobileOpened/NavbarMobileOpened';
 
 import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import NavbarMobileOpened from './NavbarMobileOpened/NavbarMobileOpened';
 import { useWindowScrollPosition } from 'shared/lib/hooks/useWindowScrollPosition/useWindowScrollPosition';
-import usePreviousValue from 'shared/lib/hooks/usePreviousValue/usePreviousValue';
+import { DimensionsContext } from 'app/providers/DimensionProvider/DimensionsProvider';
 
 interface NavbarMobileProps {
   className?: string;
@@ -25,10 +26,11 @@ interface NavbarMobileProps {
 
 const NavbarMobile = memo(({ className }: NavbarMobileProps) => {
   const { t } = useTranslation();
-  const scrollHeight = 55;
+  const scrollHeight = 50;
   const [navbarHide, setNavbarHide] = useState(false);
   const [opened, setOpened] = useState<boolean>(false);
   const [loaded, setLoaded] = useState<boolean>(false);
+  const { width, height, appRect } = useContext(DimensionsContext);
 
   const closeNavbar = useCallback(() => {
     setOpened(false);
@@ -42,25 +44,29 @@ const NavbarMobile = memo(({ className }: NavbarMobileProps) => {
   }, [loaded, setLoaded]);
 
   const hidden = { opacity: 0, y: -20 };
-  const hidden2 = { opacity: 0, y: -20, transition: { duration: 0.1 } };
-  const visible = { opacity: 1, y: 0, transition: { duration: 0.8 } };
+  const hidden2 = { opacity: 0, y: -20, transition: { duration: 0.2 } };
+  const visible = { opacity: 1, y: 0, transition: { duration: 0.3 } };
 
   const scrollPos = useWindowScrollPosition();
   const prevScrollPos = usePreviousValue(scrollPos);
 
   useEffect(() => {
     if (prevScrollPos) {
-      scrollPos > scrollHeight && prevScrollPos > scrollPos
+      scrollPos > scrollHeight &&
+      prevScrollPos > scrollPos &&
+      prevScrollPos + height < appRect?.height!
         ? setNavbarHide(true)
         : setNavbarHide(false);
     }
   }, [scrollPos]);
   const getBlurred = () => {
-    if (scrollPos > 50) {
+    if (scrollPos > scrollHeight) {
       return true;
     }
     return false;
   };
+  console.log(scrollPos);
+
   const mods: Mods = {
     [cls.blurred]: getBlurred(),
   };

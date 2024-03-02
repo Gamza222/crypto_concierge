@@ -1,0 +1,23 @@
+.AboutusSection1 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 50px;
+
+  &__text {
+    width: 50%;
+
+    @media screen and (max-width: 800px) {
+      width: 80%;
+    }
+    @media screen and (max-width: 500px) {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    gap: 30px;
+  }
+}

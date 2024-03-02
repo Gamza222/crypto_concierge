@@ -19,7 +19,9 @@ const FooterMobile = ({ className }: FooterMobileProps) => {
         <FooterButtons className={cls.FooterButtons} />
         <div className={cls.Logo}>
           <Logo className={cls.Logo__pic} />
-          <h2 className={cls.Logo__title}>Cryptoconcierge</h2>
+          <h2 className={cls.Logo__title}>
+            Crypto<span>concierge</span>
+          </h2>
         </div>
       </div>
     </div>

@@ -11,7 +11,7 @@ const MainPageSection1Text = ({ className }: MainPageSection1TextProps) => {
   const { t } = useTranslation();
 
   return (
-    <div className={classNames(cls.MainPageSection1Text, {}, [])}>
+    <div className={classNames(cls.MainPageSection1Text, {}, [className])}>
       <h3 className={cls.MainPageSection1Text__white}>
         {t('Header1')}
         <br />

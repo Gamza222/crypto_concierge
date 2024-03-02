@@ -8,7 +8,9 @@ interface GoldPicButtonProps {
 
 const GoldPicButton = ({ className }: GoldPicButtonProps) => {
   return (
-    <button className={classNames(cls.GoldPicButton, {}, [className])}></button>
+    <button className={classNames(cls.GoldPicButton, {}, [className])}>
+      {}
+    </button>
   );
 };
 

@@ -19,6 +19,7 @@ body {
 
 .app {
   position: relative;
+  overflow-x: clip;
   // padding-top: calc(27px - var(--padding-navbar-top));
 
   @media screen and (max-width: 1200px) {
@@ -33,6 +34,18 @@ body {
 
   @media screen and (max-width: 1200px) {
     display: none;
+  }
+}
+
+.content-page {
+  margin-top: calc(
+    0 - var(--logo-navbar-height) - var(--padding-navbar-top) * 2
+  );
+  @media screen and (max-width: 1200px) {
+    margin-top: calc(
+      0 - var(--logo-navbar-mobile-height) - var(--padding-navbar-mobile-top) *
+        2
+    );
   }
 }
 

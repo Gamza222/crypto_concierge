@@ -1,0 +1,13 @@
+.AboutusPage {
+  padding: 0 var(--padding-main-sides);
+
+  &__content {
+    min-height: var(--min-height-100vh);
+    padding-bottom: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 300px;
+  }
+}

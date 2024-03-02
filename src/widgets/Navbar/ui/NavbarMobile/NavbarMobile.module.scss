@@ -1,5 +1,5 @@
 .NavbarMobile {
-  padding: var(--padding-navbar-mobile-top) var(--padding-main-sides);
+  padding: var(--padding-navbar-top) var(--padding-main-sides);
   display: flex;
   z-index: 10;
   align-items: center;
@@ -8,27 +8,28 @@
   top: 0;
   left: 0;
   width: 100%;
-  transition: backdrop-filter, background-color 0.1s linear;
+  margin-bottom: var(--margin-navbar-bottom);
+  filter: drop-shadow(2px 3px 1px #000);
 }
 
 .Logo {
   display: flex;
   height: fit-content;
   &__pic {
-    height: var(--logo-navbar-mobile-height);
-    width: 22px;
+    height: var(--logo-navbar-height);
   }
 }
 
 .MenuBtn {
   &__content {
-    width: 40px;
-    height: 21px;
+    width: 55px;
+    height: 40px;
   }
 }
 
 .blurred {
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(10, 10, 10, 0.7);
+  filter: none;
 }

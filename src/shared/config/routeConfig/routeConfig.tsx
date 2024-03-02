@@ -1,3 +1,4 @@
+import { AboutusPage } from 'pages/AboutusPage';
 import { MainPageAsync } from 'pages/MainPage';
 import { NotFoundPageAsync } from 'pages/NotFoundPage';
 import { SupportPage } from 'pages/SupportPage';
@@ -56,6 +57,6 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
   },
   [AppRoutes.ABOUT_US]: {
     path: RoutePath.about_us,
-    element: <NotFoundPageAsync />,
+    element: <AboutusPage />,
   },
 };

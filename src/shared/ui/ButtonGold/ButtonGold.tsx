@@ -12,7 +12,9 @@ interface ButtonGoldProps
 const ButtonGold = ({ className, children, ...props }: ButtonGoldProps) => {
   return (
     <button className={classNames(cls.ButtonGold, {}, [className])} {...props}>
-      <div className={cls.ButtonGold__content}>{children}</div>
+      <div className={cls.ButtonGold__content}>
+        <div className={cls.ButtonGold__content__text}>{children}</div>
+      </div>
     </button>
   );
 };

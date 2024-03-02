@@ -1,0 +1,22 @@
+.AboutusSection2 {
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+  justify-content: center;
+  align-items: center;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @media screen and (max-width: 1000px) {
+    }
+    @media screen and (max-width: 550px) {
+      grid-template-columns: 1fr;
+      row-gap: 90px;
+    }
+  }
+}

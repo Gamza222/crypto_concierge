@@ -1,0 +1,24 @@
+@import '../../../app/styles/mixins/mixins.scss';
+
+.CirclePic {
+  --circle-pic-size: 160px;
+  height: var(--circle-pic-size);
+  width: var(--circle-pic-size);
+  padding: 3px;
+  position: relative;
+
+  &::before {
+    @include BeforeGradient;
+    border-radius: 100%;
+  }
+
+  &__content {
+    border-radius: 100%;
+    background: var(--overlay-color);
+
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 10;
+  }
+}

@@ -23,6 +23,7 @@ interface MainPageSection2Props {
 const MainPageSection2 = memo(({ className }: MainPageSection2Props) => {
   const { t } = useTranslation();
   const [exitAnimation, setExitAnimation] = useState(false);
+  const [exitAnimationText, setExitAnimationText] = useState(false);
 
   const animationTextVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -45,16 +46,17 @@ const MainPageSection2 = memo(({ className }: MainPageSection2Props) => {
   return (
     <AnimationBox
       className={classNames(cls.MainPageSection2, { ...mods }, [className])}
-      visiblePart={400}
+      visiblePart={10}
       variants={{}}
       exitAnimation={exitAnimation}
       setExit={setterExitAnimation}
     >
       <AnimationBox
         className={cls.titleBox}
-        visiblePart={400}
+        visiblePart={300}
         variants={animationTextVariants}
-        exitAnimation={exitAnimation}
+        exitAnimation={exitAnimationText}
+        setExit={setExitAnimationText}
       >
         <Title className={cls.Title}>{t('One platform, many solutions')}</Title>
       </AnimationBox>
@@ -64,7 +66,7 @@ const MainPageSection2 = memo(({ className }: MainPageSection2Props) => {
             <AnimationBox
               visiblePart={400}
               variants={animationBoxVariants}
-              exitAnimation={exitAnimation}
+              exitAnimation={exitAnimationText}
               key={key}
             >
               <PicBox
@@ -72,7 +74,7 @@ const MainPageSection2 = memo(({ className }: MainPageSection2Props) => {
                 title={option.title}
                 description={option.description}
                 Pic={option.Pic}
-                exitAnimation={exitAnimation}
+                exitAnimation={exitAnimationText}
               />
             </AnimationBox>
           );

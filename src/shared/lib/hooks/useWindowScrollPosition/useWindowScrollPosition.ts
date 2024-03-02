@@ -9,6 +9,8 @@ export function useWindowScrollPosition() {
   };
 
   useEffect(() => {
+    handleScroll();
+
     window.addEventListener('scroll', handleScroll, { passive: true });
 
     return () => {

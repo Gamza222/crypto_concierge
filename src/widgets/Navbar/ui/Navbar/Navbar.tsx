@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState } from 'react';
+import React, { memo, useContext, useEffect, useState } from 'react';
 import cls from './Navbar.module.scss';
 
 import { Mods, classNames } from 'shared/lib/classNames/classNames';
@@ -14,6 +14,7 @@ import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { motion } from 'framer-motion';
 import { useWindowScrollPosition } from 'shared/lib/hooks/useWindowScrollPosition/useWindowScrollPosition';
 import usePreviousValue from 'shared/lib/hooks/usePreviousValue/usePreviousValue';
+import { DimensionsContext } from 'app/providers/DimensionProvider/DimensionsProvider';
 
 interface NavbarProps {
   className?: string;
@@ -21,24 +22,27 @@ interface NavbarProps {
 
 const Navbar = memo(({ className }: NavbarProps) => {
   const { t } = useTranslation();
+  const { width, height, appRect } = useContext(DimensionsContext);
 
   const scrollHeight = 55;
   const [navbarHide, setNavbarHide] = useState(false);
 
   const hidden = { opacity: 0, y: -20 };
-  const hidden2 = { opacity: 0, y: -20, transition: { duration: 0.1 } };
-  const visible = { opacity: 1, y: 0, transition: { duration: 0.5 } };
+  const hidden2 = { opacity: 0, y: -20, transition: { duration: 0.2 } };
+  const visible = { opacity: 1, y: 0, transition: { duration: 0.3 } };
 
   const scrollPos = useWindowScrollPosition();
   const prevScrollPos = usePreviousValue(scrollPos);
 
   useEffect(() => {
     if (prevScrollPos) {
-      scrollPos > scrollHeight && prevScrollPos > scrollPos
+      scrollPos > scrollHeight &&
+      prevScrollPos > scrollPos &&
+      prevScrollPos + height < appRect?.height!
         ? setNavbarHide(true)
         : setNavbarHide(false);
     }
-  }, [scrollPos]);
+  }, [scrollPos, height, appRect?.height]);
 
   const getBlurred = () => {
     if (scrollPos > scrollHeight) {
