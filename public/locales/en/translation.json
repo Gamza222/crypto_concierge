@@ -28,7 +28,19 @@
   "Launch": "Launch",
   "Mobile App": "Mobile App",
   "Web App": "Web App",
-  "Download mobile app": "One platform, many solutions",
+  "Download mobile app": "Download mobile app",
   "Learn more": "Learn more",
-  "Make it easier with Crypto Concierge": "Make it easier with Crypto Concierge"
+  "Make it easier with Crypto Concierge": "Make it easier with Crypto Concierge",
+  "boxFeature1title": "Financial Security",
+  "boxFeature2title": "Your Own Portfolio",
+  "boxFeature3title": "Storing Your Data",
+  "boxFeature4title": "Do What You Want",
+  "boxFeature5title": "Fiat For Everyone",
+  "boxFeature6title": "Crypto-concierge AI",
+  "boxFeature1descr": "The most secure storage of your funds by using blockchain ensures decentralization and full legal ownership",
+  "boxFeature2descr": "Portfolio provides convenience in tracking all transactions and investments",
+  "boxFeature3descr": "Crypto Concierge generates all the data for you upon initial use, so no one else will have access to your account",
+  "boxFeature4descr": "Crypto Concierge allows you to make and conduct absolutely any transaction within cryptocurrencies and fiat assets. In addition, with the help of crypto-conservation, you can wisely invest your funds",
+  "boxFeature5descr": "Fiat + Сrypto is a powerful combination that is fully provided by the Crypto Concierge",
+  "boxFeature6descr": " Your online assistant is ready to carry out any operations for you 24/7"
 }
