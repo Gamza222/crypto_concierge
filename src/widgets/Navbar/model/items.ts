@@ -15,10 +15,6 @@ export const NavbarItemList: NabvarItemType[] = [
     text: 'our features',
   },
   {
-    path: RoutePath.build,
-    text: 'build',
-  },
-  {
     path: RoutePath.support,
     text: 'support',
   },
@@ -39,10 +35,6 @@ export const NavbarItemListMobile: NabvarItemType[] = [
   {
     path: RoutePath['our_features'],
     text: 'our features',
-  },
-  {
-    path: RoutePath.build,
-    text: 'build',
   },
   {
     path: RoutePath.support,

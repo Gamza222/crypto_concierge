@@ -9,6 +9,15 @@
   justify-content: center;
   padding-bottom: 200px;
 
+  @media screen and (min-height: 1000px) {
+    min-height: auto;
+  }
+
+  @media screen and (min-width: 1800px) {
+    max-height: 1300px;
+    min-height: 900px;
+  }
+
   &__content {
     display: flex;
     flex-direction: column;

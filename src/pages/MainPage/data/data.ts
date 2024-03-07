@@ -46,4 +46,8 @@ export const learnData: TextBoxData[] = [
     title: 'title5',
     descr: 'descr5',
   },
+  {
+    title: 'title6',
+    descr: 'descr6',
+  },
 ];

@@ -5,8 +5,9 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 
 import Title from 'shared/ui/Title/Title';
-import { ContentBox } from 'entities/ContentBox';
 import TextBox from 'shared/ui/TextBox/TextBox';
+
+import { ContentBox } from 'entities/ContentBox';
 import { learnData } from 'pages/MainPage/data/data';
 import { AnimationBox } from 'entities/AnimationBox';
 

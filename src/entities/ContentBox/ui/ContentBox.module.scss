@@ -11,11 +11,10 @@
   gap: 16px;
   border-radius: var(--border-radius-content-box);
   position: relative;
-  box-shadow: -17px 23px 51.2px 0px rgba(0, 0, 0, 0.61);
 
   &::before {
     @include BeforeGradient;
-    border-radius: var(--border-radius-content-box);
+    border-radius: var(--border-radius-content-box) !important;
   }
 }
 
@@ -26,8 +25,4 @@
   width: 100%;
   border-radius: var(--border-radius-content-box);
   background: var(--overlay-color);
-
-  display: flex;
-  gap: 50px;
-  flex-direction: column;
 }

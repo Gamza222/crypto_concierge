@@ -1,14 +1,8 @@
-import React, {
-  memo,
-  useCallback,
-  useContext,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import React, { memo, useCallback, useState } from 'react';
 import cls from './MainPageSection2.module.scss';
 
 import Title from 'shared/ui/Title/Title';
+import Pers from 'shared/assets/icons/Concierge2-min.png';
 
 import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
@@ -74,11 +68,13 @@ const MainPageSection2 = memo(({ className }: MainPageSection2Props) => {
                 title={option.title}
                 description={option.description}
                 Pic={option.Pic}
-                exitAnimation={exitAnimationText}
               />
             </AnimationBox>
           );
         })}
+        <div className={cls.Pers}>
+          <img src={Pers} alt='persona' className={cls.Pers__pic} />
+        </div>
       </div>
     </AnimationBox>
   );

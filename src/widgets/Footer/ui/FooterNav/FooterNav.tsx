@@ -18,7 +18,7 @@ const FooterNav = ({ className }: FooterNavProps) => {
             {t('Mobile App')}
           </a>
           <a href='#' className={cls.Element__items__link}>
-            {t('Web versiom')}
+            {t('Web version')}
           </a>
         </div>
       </div>

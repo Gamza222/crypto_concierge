@@ -1,6 +1,7 @@
 import { AboutusPage } from 'pages/AboutusPage';
 import { MainPageAsync } from 'pages/MainPage';
 import { NotFoundPageAsync } from 'pages/NotFoundPage';
+import { OurFeaturesPage } from 'pages/OurFeaturesPage';
 import { SupportPage } from 'pages/SupportPage';
 import Wallet from 'pages/Wallet/ui/Wallet';
 import React from 'react';
@@ -45,7 +46,7 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
   },
   [AppRoutes.OUR_FEATURES]: {
     path: RoutePath['our_features'],
-    element: <NotFoundPageAsync />,
+    element: <OurFeaturesPage />,
   },
   [AppRoutes.BUILD]: {
     path: RoutePath.build,

@@ -7,7 +7,8 @@ import { motion } from 'framer-motion';
 
 import MainPageSection1Text from './MainPageSection1Text/MainPageSection1Text';
 import MainPageSection1Buttons from './MainPageSection1Buttons/MainPageSection1Buttons';
-import Pers from 'shared/assets/icons/Concierge2.png';
+import Pers from 'shared/assets/icons/Concierge2-min.png';
+
 import { DimensionsContext } from 'app/providers/DimensionProvider/DimensionsProvider';
 import { AnimationBox } from 'entities/AnimationBox';
 
@@ -81,7 +82,11 @@ const MainPageSection1 = ({ className }: MainPageSection1Props) => {
           variants={animationPicVariants}
           exitAnimation={false}
         >
-          <img src={Pers} alt='' className={cls.PicContainer__content__pic} />
+          <img
+            src={Pers}
+            alt='persona'
+            className={cls.PicContainer__content__pic}
+          />
         </AnimationBox>
       </div>
     </div>
