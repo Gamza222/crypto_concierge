@@ -58,7 +58,7 @@ const MainPageSection2 = memo(({ className }: MainPageSection2Props) => {
         {optionsData.map((option, key) => {
           return (
             <AnimationBox
-              visiblePart={400}
+              visiblePart={220}
               variants={animationBoxVariants}
               exitAnimation={exitAnimationText}
               key={key}
@@ -68,6 +68,7 @@ const MainPageSection2 = memo(({ className }: MainPageSection2Props) => {
                 title={option.title}
                 description={option.description}
                 Pic={option.Pic}
+                PicWidth={option.PicWidth}
               />
             </AnimationBox>
           );

@@ -3,14 +3,26 @@
 
   &__content {
     min-height: var(--min-height-100vh);
-    padding-bottom: 360px;
-    padding-top: 100px;
+    padding-bottom: 260px;
+    padding-top: 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 300px;
+    gap: 220px;
 
+    @media screen and (max-width: 959px) {
+      gap: 150px;
+      padding-bottom: 150px;
+      padding-top: 0 !important;
+    }
+
+    @media screen and (max-width: 1200px) {
+      padding-top: 30px;
+    }
+    @media screen and (max-width: 1200px) {
+      padding-top: 30px;
+    }
     @media screen and (min-height: 1000px) {
       min-height: auto;
     }

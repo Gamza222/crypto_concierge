@@ -35,28 +35,28 @@ const AboutusSection2 = ({
         exitAnimation={exitAnimation || false}
       >
         <AnimationBox
-          visiblePart={200}
+          visiblePart={90}
           variants={animationCircleVariants}
           exitAnimation={exitAnimation || false}
         >
           <CirclePic />
         </AnimationBox>
         <AnimationBox
-          visiblePart={200}
+          visiblePart={90}
           variants={animationCircleVariants}
           exitAnimation={exitAnimation || false}
         >
           <CirclePic />
         </AnimationBox>
         <AnimationBox
-          visiblePart={200}
+          visiblePart={90}
           variants={animationCircleVariants}
           exitAnimation={exitAnimation || false}
         >
           <CirclePic />
         </AnimationBox>
         <AnimationBox
-          visiblePart={200}
+          visiblePart={90}
           variants={animationCircleVariants}
           exitAnimation={exitAnimation || false}
         >

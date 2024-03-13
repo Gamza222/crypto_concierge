@@ -30,20 +30,21 @@ const AboutusPage = ({ className }: AboutusPageProps) => {
     <div className={classNames(cls.AboutusPage, {}, [className])}>
       <div className={cls.AboutusPage__content}>
         <AnimationBox
-          visiblePart={0}
+          visiblePart={400}
           variants={animationSection1Variants}
           exitAnimation={false}
+          // setExit={setterExitAnimation}
+          style={{ width: '100%' }}
         >
-          <AboutusSection1 />
+          <AboutusSection2 />
         </AnimationBox>
         <AnimationBox
-          visiblePart={400}
+          visiblePart={200}
           variants={animationSection1Variants}
           exitAnimation={exitAnimation}
           setExit={setterExitAnimation}
-          style={{ width: '100%' }}
         >
-          <AboutusSection2 exitAnimation={exitAnimation} />
+          <AboutusSection1 />
         </AnimationBox>
       </div>
       {width > 1200 ? <Footer /> : <FooterMobile />}

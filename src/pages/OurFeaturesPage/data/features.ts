@@ -2,32 +2,32 @@ import { PicBoxData } from 'entities/PicBox';
 
 export const FeaturesOptionsData: PicBoxData[] = [
   {
-    Pic: null,
+    Pic: '',
     title: 'boxFeature1title',
     description: 'boxFeature1descr',
   },
   {
-    Pic: null,
+    Pic: '',
     title: 'boxFeature2title',
     description: 'boxFeature2descr',
   },
   {
-    Pic: null,
+    Pic: '',
     title: 'boxFeature3title',
     description: 'boxFeature3descr',
   },
   {
-    Pic: null,
+    Pic: '',
     title: 'boxFeature4title',
     description: 'boxFeature4descr',
   },
   {
-    Pic: null,
+    Pic: '',
     title: 'boxFeature5title',
     description: 'boxFeature5descr',
   },
   {
-    Pic: null,
+    Pic: '',
     title: 'boxFeature6title',
     description: 'boxFeature6descr',
   },

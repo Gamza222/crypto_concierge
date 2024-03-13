@@ -7,13 +7,17 @@ import DescriptionText from 'shared/ui/DescriptionText/DescriptionText';
 
 interface AboutusSection1Props {
   className?: string;
+  exitAnimation?: boolean;
 }
 
-const AboutusSection1 = ({ className }: AboutusSection1Props) => {
+const AboutusSection1 = ({
+  className,
+  exitAnimation,
+}: AboutusSection1Props) => {
   const { t } = useTranslation('aboutus');
   return (
     <div className={classNames(cls.AboutusSection1, {}, [className])}>
-      <Title>{t('We provide high')}</Title>
+      <Title>{t('section1_title')}</Title>
       <DescriptionText className={cls.AboutusSection1__text}>
         {t('section1_descr')}
       </DescriptionText>

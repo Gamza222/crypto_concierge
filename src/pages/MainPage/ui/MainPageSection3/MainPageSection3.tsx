@@ -65,7 +65,9 @@ const MainPageSection3 = ({ className }: MainPageSection3Props) => {
                 })}
                 key={key}
               >
-                <div className={cls.Item__pic}></div>
+                <div className={cls.Item__pic}>
+                  <img src={data.pic} alt='' />
+                </div>
                 <TextBox
                   title={data.title}
                   descr={data.descr}

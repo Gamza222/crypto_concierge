@@ -5,6 +5,13 @@
   justify-content: center;
   align-items: center;
 
+  @media screen and (max-width: 959px) {
+    gap: 70px;
+  }
+  @media screen and (max-width: 750px) {
+    gap: 50px;
+  }
+
   &__content {
     display: flex;
     align-items: center;
@@ -12,11 +19,11 @@
     flex-wrap: wrap;
     justify-content: center;
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 750px) {
+      gap: 40px;
     }
     @media screen and (max-width: 550px) {
       grid-template-columns: 1fr;
-      row-gap: 90px;
     }
   }
 }

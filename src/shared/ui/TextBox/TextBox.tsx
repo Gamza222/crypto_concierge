@@ -13,6 +13,7 @@ export enum TextBoxAlign {
 export interface TextBoxData {
   title: string;
   descr: string;
+  pic?: string;
 }
 interface TextBoxProps extends TextBoxData {
   className?: string;

@@ -6,7 +6,9 @@ import { useTranslation } from 'react-i18next';
 import { useElementRect } from 'shared/lib/hooks/useElementRect/useElementRect';
 
 export interface PicBoxData {
-  Pic: React.VFC<React.SVGProps<SVGSVGElement>> | null;
+  Pic: string;
+  PicWidth?: string;
+  PicHeight?: string;
   title: string;
   description: string;
 }
@@ -15,9 +17,16 @@ interface PicBoxProps extends PicBoxData {
   className?: string;
 }
 
-const PicBox = ({ className, title, description, Pic }: PicBoxProps) => {
+const PicBox = ({
+  className,
+  title,
+  description,
+  Pic,
+  PicWidth,
+  PicHeight,
+}: PicBoxProps) => {
   const { t } = useTranslation();
-  const boxRef = useRef<HTMLDivElement>(null);
+  const boxRef = useRef<any>(null);
   const boxRect = useElementRect(boxRef);
 
   useEffect(() => {
@@ -35,20 +44,24 @@ const PicBox = ({ className, title, description, Pic }: PicBoxProps) => {
       window.removeEventListener('mousemove', handleWindowMouseMove);
     };
   }, [boxRect, boxRef]);
+
+  const picStyles: React.CSSProperties = {
+    width: PicWidth || '',
+    height: PicHeight || '',
+  };
   return (
-    <div className={classNames(cls.PicBox, {}, [className])}>
-      <div className={cls.Content} ref={boxRef}>
-        {Pic && (
-          <div className={cls.Icon}>
-            <Pic />
+    <button className={cls.PicBoxWrapper} ref={boxRef}>
+      {Pic && <img className={cls.Icon} src={Pic} style={picStyles} />}
+
+      <div className={classNames(cls.PicBox, {}, [className])}>
+        <div className={cls.Content}>
+          <div className={cls.Info}>
+            <h6 className={cls.Info__title}>{t(title)}</h6>
+            <p className={cls.Info__descr}>{t(description)}</p>
           </div>
-        )}
-        <div className={cls.Info}>
-          <h6 className={cls.Info__title}>{t(title)}</h6>
-          <p className={cls.Info__descr}>{t(description)}</p>
         </div>
       </div>
-    </div>
+    </button>
   );
 };
 
