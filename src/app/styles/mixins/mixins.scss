@@ -87,6 +87,27 @@
     }
   }
 }
+@mixin Github($color, $hoverColor, $width) {
+  width: $width;
+  height: $width;
+
+  > g {
+    > path:nth-child(1) {
+      fill: $color;
+      transition: var(--pic-transiction);
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      > g {
+        > path:nth-child(1) {
+          fill: $hoverColor;
+        }
+      }
+    }
+  }
+}
 @mixin Discord($color, $hoverColor, $width) {
   width: $width;
   height: $width;

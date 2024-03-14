@@ -7,6 +7,7 @@ import Instagram from 'shared/assets/icons/Instagram.svg';
 import Twitter from 'shared/assets/icons/Twitter.svg';
 import Discord from 'shared/assets/icons/Discord.svg';
 import Telegram from 'shared/assets/icons/Telegram.svg';
+import Github from 'shared/assets/icons/Github.svg';
 
 import ButtonGold from 'shared/ui/ButtonGold/ButtonGold';
 
@@ -36,27 +37,38 @@ const SupportPageContent = ({ className }: SupportPageContentProps) => {
       <div className={cls.StayContentPageContent__content}>
         <Title className={cls.Title}>{t('Stay connected')}:</Title>
         <div className={cls.Links}>
-          <a href='#'>
+          {/* <a href='#'>
             <ButtonGold className={cls.Button}>
               <Facebook className={cls.Button__FacebookPic} />
             </ButtonGold>
+          </a> */}
+          <a
+            href='https://cryptoconcierge.gitbook.io/crypto-concierge/'
+            target='_blank'
+          >
+            <ButtonGold className={cls.Button}>
+              <Github className={cls.Button__GithubPic} />
+            </ButtonGold>
           </a>
-          <a href='#'>
+          <a
+            href='https://www.instagram.com/crypto__concierge/'
+            target='_blank'
+          >
             <ButtonGold className={cls.Button}>
               <Instagram className={cls.Button__InstagramPic} />
             </ButtonGold>
           </a>
-          <a href='#'>
+          <a href='https://twitter.com/C_Concierge' target='_blank'>
             <ButtonGold className={cls.Button}>
               <Twitter className={cls.Button__Twitter} />
             </ButtonGold>
           </a>
-          <a href='#'>
+          {/* <a href='#'>
             <ButtonGold className={cls.Button}>
               <Discord className={cls.Button__Discord} />
             </ButtonGold>
-          </a>
-          <a href='#'>
+          </a> */}
+          <a href='https://t.me/cconcierge' target='_blank'>
             <ButtonGold className={cls.Button}>
               <Telegram className={cls.Button__Telegram} />
             </ButtonGold>

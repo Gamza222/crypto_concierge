@@ -58,6 +58,13 @@
       var(--StayContentPageContent-pic-size)
     );
   }
+  &__GithubPic {
+    @include Github(
+      var(--color-black),
+      var(--color-black),
+      var(--StayContentPageContent-pic-size)
+    );
+  }
 
   &__Twitter {
     @include Twitter(

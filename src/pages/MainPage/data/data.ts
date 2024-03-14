@@ -18,7 +18,7 @@ export const optionsData: PicBoxData[] = [
     Pic: swap,
     PicWidth: '160px',
     title: 'Swap',
-    description: 'fast exchange of tokens in different networks',
+    description: 'Fast exchange of tokens in different networks',
   },
   {
     Pic: buy,
@@ -30,7 +30,7 @@ export const optionsData: PicBoxData[] = [
     Pic: staking,
     PicWidth: '200px',
     title: 'Staking',
-    description: 'Stake your token and earn maximum percentage apr/apy',
+    description: 'Stake your token and earn maximum apr/apy',
   },
   {
     Pic: delivery,
