@@ -65,7 +65,6 @@ const NavbarMobile = memo(({ className }: NavbarMobileProps) => {
     }
     return false;
   };
-  console.log(scrollPos);
 
   const mods: Mods = {
     [cls.blurred]: getBlurred(),

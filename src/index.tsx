@@ -18,13 +18,13 @@ render(
       <Loader className='main-loader' />
     }
   >
-    <HashRouter>
+    <BrowserRouter>
       <StoreProvider>
         <ErrorBoundary>
           <App />
         </ErrorBoundary>
       </StoreProvider>
-    </HashRouter>
+    </BrowserRouter>
   </Suspense>,
   document.getElementById('root'),
 );
