@@ -30,12 +30,18 @@ const MainPageSection1Buttons = ({
             Pic={PhonePic}
             onClick={() => {}}
           />
-          <ButtonGoldBorder
-            title={t('Launch')}
-            text={t('Web App')}
-            Pic={PCPic}
-            onClick={() => {}}
-          />
+          <a
+            href='https://app.crypto-concierge.com'
+            target='_blank'
+            className={cls.Link}
+          >
+            <ButtonGoldBorder
+              title={t('Launch')}
+              text={t('Web App')}
+              Pic={PCPic}
+              onClick={() => {}}
+            />
+          </a>
         </div>
       ) : (
         <ButtonGold className={cls.DownloadBtnMobile} onClick={() => {}}>

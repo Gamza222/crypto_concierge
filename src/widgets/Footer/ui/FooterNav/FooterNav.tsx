@@ -17,7 +17,11 @@ const FooterNav = ({ className }: FooterNavProps) => {
           <a href='#' className={cls.Element__items__link}>
             {t('Mobile App')}
           </a>
-          <a href='#' className={cls.Element__items__link}>
+          <a
+            href='https://app.crypto-concierge.com'
+            target='_blank'
+            className={cls.Element__items__link}
+          >
             {t('Web version')}
           </a>
         </div>

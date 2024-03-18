@@ -24,13 +24,15 @@ const DownloadGoldenButtons = ({ className }: DownloadGoldenButtonsProps) => {
           <p className={cls.Button__text__info}>{t('Mobile App')}</p>
         </div>
       </ButtonGold>
-      <ButtonGold onClick={() => {}} className={cls.Button}>
-        <PCPic className={cls.Button__pic} />
-        <div className={cls.Button__text}>
-          <p className={cls.Button__text__title}>{t('Launch')}</p>
-          <p className={cls.Button__text__info}>{t('Web App')}</p>
-        </div>
-      </ButtonGold>
+      <a href='https://app.crypto-concierge.com' target='_blank'>
+        <ButtonGold onClick={() => {}} className={cls.Button}>
+          <PCPic className={cls.Button__pic} />
+          <div className={cls.Button__text}>
+            <p className={cls.Button__text__title}>{t('Launch')}</p>
+            <p className={cls.Button__text__info}>{t('Web App')}</p>
+          </div>
+        </ButtonGold>
+      </a>
     </div>
   );
 };
