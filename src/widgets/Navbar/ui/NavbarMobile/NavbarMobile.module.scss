@@ -14,9 +14,21 @@
 
 .Logo {
   display: flex;
+  align-items: center;
+  gap: 10px;
   height: fit-content;
   &__pic {
     height: var(--logo-navbar-height);
+  }
+
+  &__by {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--primary-color);
+    border-radius: 8px;
+    border: 0.5px solid var(--Linear, #af8a53);
+    padding: 2px 6px;
+    background: #2b2b2b;
   }
 }
 

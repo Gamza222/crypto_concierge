@@ -11,6 +11,7 @@ import Switch from 'shared/assets/icons/Switch.svg';
 import Logo from 'shared/assets/icons/Logo.svg';
 import usePreviousValue from 'shared/lib/hooks/usePreviousValue/usePreviousValue';
 import NavbarMobileOpened from './NavbarMobileOpened/NavbarMobileOpened';
+import SquareLogo from 'shared/assets/icons/square_logo.svg';
 
 import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
@@ -84,6 +85,8 @@ const NavbarMobile = memo(({ className }: NavbarMobileProps) => {
       >
         <Link to={RoutePath.main} className={cls.Logo}>
           <Logo className={cls.Logo__pic} />
+          <p className={cls.Logo__by}>By</p>
+          <SquareLogo />
         </Link>
         <button className={cls.MenuBtn} onClick={openNavbar}>
           <Switch className={cls.MenuBtn__content} />

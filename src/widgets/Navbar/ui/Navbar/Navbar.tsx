@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 import Logo from 'shared/assets/icons/Logo.svg';
 import NavbarItem from '../NavbarItem/NavbarItem';
 import ButtonGold from 'shared/ui/ButtonGold/ButtonGold';
+import SquareLogo from 'shared/assets/icons/square_logo.svg';
 
 import { NavbarItemList } from '../../model/items';
 import { Link } from 'react-router-dom';
@@ -68,6 +69,8 @@ const Navbar = memo(({ className }: NavbarProps) => {
       <Link to={RoutePath.main} className={cls.Logo}>
         <Logo className={cls.Logo__pic} />
         <h2 className={cls.Logo__title}>Cryptoconcierge</h2>
+        <p className={cls.Logo__by}>By</p>
+        <SquareLogo />
       </Link>
       <nav className={cls.Menu}>
         {NavbarItemList.map((item, key) => {
