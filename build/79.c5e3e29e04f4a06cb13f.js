@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcrypto_concierge=self.webpackChunkcrypto_concierge||[]).push([[79],{79:(e,c,t)=>{t.r(c),t.d(c,{default:()=>s});var a=t(540),n=t(101);const r={},s=function(e){return e.className,a.createElement("div",{className:(0,n.x)(r.NotFoundPage,{},[])})}}}]);

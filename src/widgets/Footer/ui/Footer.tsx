@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 
-import cls from './Footer.module.scss';
-import Logo from 'shared/assets/icons/Logo.svg';
+import cls from "./Footer.module.scss";
+import Logo from "shared/assets/icons/Logo.svg";
 
-import { classNames } from 'shared/lib/classNames/classNames';
-import FooterNav from './FooterNav/FooterNav';
-import FooterButtons from './FooterButtons/FooterButtons';
-import FooterSocial from './FooterSocial/FooterSocial';
+import { classNames } from "shared/lib/classNames/classNames";
+import FooterNav from "./FooterNav/FooterNav";
+import FooterButtons from "./FooterButtons/FooterButtons";
+import FooterSocial from "./FooterSocial/FooterSocial";
 
 interface FooterProps {
   className?: string;
@@ -23,7 +23,7 @@ const Footer = ({ className }: FooterProps) => {
         <FooterNav />
         <div className={cls.Right__bottom}>
           <FooterButtons />
-          <FooterSocial />
+          {/* <FooterSocial /> */}
         </div>
       </div>
     </div>

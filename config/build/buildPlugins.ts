@@ -1,11 +1,11 @@
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import webpack from 'webpack';
-import CopyPlugin from 'copy-webpack-plugin';
-import path from 'path';
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import webpack from "webpack";
+import CopyPlugin from "copy-webpack-plugin";
+import path from "path";
 
-import { type BuildOptions } from './types/config';
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import { type BuildOptions } from "./types/config";
+import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 
 export function buildPlugins({
   paths,
@@ -15,11 +15,12 @@ export function buildPlugins({
   const plugins = [
     new HtmlWebpackPlugin({
       template: paths.html,
+      favicon: "./public/favicon.ico",
     }),
     new webpack.ProgressPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'css/[name].[contenthash:8].css',
-      chunkFilename: 'css/[name].[contenthash:8].css',
+      filename: "css/[name].[contenthash:8].css",
+      chunkFilename: "css/[name].[contenthash:8].css",
     }),
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
@@ -28,8 +29,8 @@ export function buildPlugins({
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, '../../public/locales'),
-          to: path.resolve(__dirname, '../../build/public/locales'),
+          from: path.resolve(__dirname, "../../public/locales"),
+          to: path.resolve(__dirname, "../../build/public/locales"),
           noErrorOnMissing: true, // To prevent errors if the folder doesn't exist
         },
       ],
@@ -42,7 +43,7 @@ export function buildPlugins({
     plugins.push(
       new BundleAnalyzerPlugin({
         openAnalyzer: false,
-      }),
+      })
     );
   }
 

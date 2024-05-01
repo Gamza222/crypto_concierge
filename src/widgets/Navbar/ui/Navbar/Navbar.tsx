@@ -1,21 +1,21 @@
-import React, { memo, useContext, useEffect, useState } from 'react';
-import cls from './Navbar.module.scss';
+import React, { memo, useContext, useEffect, useState } from "react";
+import cls from "./Navbar.module.scss";
 
-import { Mods, classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
+import { Mods, classNames } from "shared/lib/classNames/classNames";
+import { useTranslation } from "react-i18next";
 
-import Logo from 'shared/assets/icons/Logo.svg';
-import NavbarItem from '../NavbarItem/NavbarItem';
-import ButtonGold from 'shared/ui/ButtonGold/ButtonGold';
-import SquareLogo from 'shared/assets/icons/square_logo.svg';
+import Logo from "shared/assets/icons/Logo.svg";
+import NavbarItem from "../NavbarItem/NavbarItem";
+import ButtonGold from "shared/ui/ButtonGold/ButtonGold";
+import SquareLogo from "shared/assets/icons/square_logo.svg";
 
-import { NavbarItemList } from '../../model/items';
-import { Link } from 'react-router-dom';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { motion } from 'framer-motion';
-import { useWindowScrollPosition } from 'shared/lib/hooks/useWindowScrollPosition/useWindowScrollPosition';
-import usePreviousValue from 'shared/lib/hooks/usePreviousValue/usePreviousValue';
-import { DimensionsContext } from 'app/providers/DimensionProvider/DimensionsProvider';
+import { NavbarItemList } from "../../model/items";
+import { Link } from "react-router-dom";
+import { RoutePath } from "shared/config/routeConfig/routeConfig";
+import { motion } from "framer-motion";
+import { useWindowScrollPosition } from "shared/lib/hooks/useWindowScrollPosition/useWindowScrollPosition";
+import usePreviousValue from "shared/lib/hooks/usePreviousValue/usePreviousValue";
+import { DimensionsContext } from "app/providers/DimensionProvider/DimensionsProvider";
 
 interface NavbarProps {
   className?: string;
@@ -58,7 +58,7 @@ const Navbar = memo(({ className }: NavbarProps) => {
   return (
     <motion.div
       className={classNames(cls.Navbar, { ...mods }, [className])}
-      initial='hidden'
+      initial="hidden"
       animate={navbarHide ? hidden2 : visible}
       exit={{ opacity: 0, transition: { duration: 1 } }}
       variants={{
@@ -77,8 +77,12 @@ const Navbar = memo(({ className }: NavbarProps) => {
           return <NavbarItem item={item} key={key} />;
         })}
       </nav>
-      <a href='#' className={cls.LaunchBtn}>
-        <ButtonGold>{t('launch app')}</ButtonGold>
+      <a
+        href="https://app.crypto-concierge.com/auth"
+        target="_blank"
+        className={cls.LaunchBtn}
+      >
+        <ButtonGold>{t("launch app")}</ButtonGold>
       </a>
     </motion.div>
   );
