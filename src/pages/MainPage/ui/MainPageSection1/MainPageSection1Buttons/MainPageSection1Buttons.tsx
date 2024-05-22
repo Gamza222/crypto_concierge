@@ -44,9 +44,11 @@ const MainPageSection1Buttons = ({
           </a>
         </div>
       ) : (
-        <ButtonGold className={cls.DownloadBtnMobile} onClick={() => {}}>
-          {t("Download mobile app")}
-        </ButtonGold>
+        <a href="https://app.crypto-concierge.com/auth" target="_blank">
+          <ButtonGold className={cls.DownloadBtnMobile} onClick={() => {}}>
+            {t("Download mobile app")}
+          </ButtonGold>
+        </a>
       )}
     </div>
   );

@@ -14,7 +14,11 @@ const FooterNav = ({ className }: FooterNavProps) => {
       <div className={cls.Element}>
         <h5 className={cls.Element__title}>{t("Wallet")}</h5>
         <div className={cls.Element__items}>
-          <a href="#" className={cls.Element__items__link}>
+          <a
+            href="https://app.crypto-concierge.com/auth"
+            target="_blank"
+            className={cls.Element__items__link}
+          >
             {t("Mobile App")}
           </a>
           <a

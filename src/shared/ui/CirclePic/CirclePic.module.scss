@@ -1,10 +1,61 @@
-@import '../../../app/styles/mixins/mixins.scss';
+@import "../../../app/styles/mixins/mixins.scss";
+
+.Card {
+  padding: 2px;
+  position: relative;
+
+  &__content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px 20px;
+    border-radius: 38px;
+    background: linear-gradient(180deg, #373737 0%, #1d1d1d 100%);
+
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 4;
+  }
+
+  &::before {
+    @include BeforeGradient;
+    border-radius: 40px;
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    text-align: center;
+  }
+
+  &__name {
+    font-size: calc(var(--font-size-4) - 4px);
+    color: #fff;
+    font-weight: var(--font-weight-bold);
+  }
+
+  &__text {
+    font-size: calc(var(--font-size-4) - 3px);
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  &__text2 {
+    color: #fff;
+    font-size: var(--font-size-1);
+    padding-left: 10px;
+    font-weight: var(--font-weight-bold);
+  }
+}
 
 .CirclePic {
-  --circle-pic-size: 160px;
+  --circle-pic-size: 240px;
   height: var(--circle-pic-size);
   width: var(--circle-pic-size);
-  padding: 3px;
+  padding: 2px;
   position: relative;
 
   &::before {
@@ -20,5 +71,19 @@
     height: 100%;
     position: relative;
     z-index: 4;
+    overflow: hidden;
   }
+}
+
+.pic {
+  position: absolute;
+  height: 120%;
+  top: -20%;
+  left: -10%;
+}
+.pic {
+  position: absolute;
+  height: 120%;
+  top: -10%;
+  left: -10%;
 }

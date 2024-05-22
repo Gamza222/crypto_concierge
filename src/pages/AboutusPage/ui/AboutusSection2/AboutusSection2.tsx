@@ -1,10 +1,15 @@
-import React from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './AboutusSection2.module.scss';
-import Title from 'shared/ui/Title/Title';
-import { useTranslation } from 'react-i18next';
-import CirclePic from 'shared/ui/CirclePic/CirclePic';
-import { AnimationBox } from 'entities/AnimationBox';
+import React from "react";
+import cls from "./AboutusSection2.module.scss";
+import Title from "shared/ui/Title/Title";
+import CirclePic from "shared/ui/CirclePic/CirclePic";
+
+import { AnimationBox } from "entities/AnimationBox";
+import { useTranslation } from "react-i18next";
+import { classNames } from "shared/lib/classNames/classNames";
+
+import person1Pic from "shared/assets/icons/person1.png";
+import person2Pic from "shared/assets/icons/person2.png";
+import person3Pic from "shared/assets/icons/person3.png";
 
 interface AboutusSection2Props {
   className?: string;
@@ -15,7 +20,7 @@ const AboutusSection2 = ({
   className,
   exitAnimation,
 }: AboutusSection2Props) => {
-  const { t } = useTranslation('aboutus');
+  const { t } = useTranslation("aboutus");
   const animationCircleVariants = {
     hidden: { y: 20, opacity: 0 },
     visible: { y: 0, opacity: 1, transition: { duration: 0.8 } },
@@ -27,7 +32,7 @@ const AboutusSection2 = ({
 
   return (
     <div className={classNames(cls.AboutusSection2, {}, [])}>
-      <Title>{t('Team')}</Title>
+      <Title>{t("Team")}</Title>
       <AnimationBox
         className={cls.AboutusSection2__content}
         visiblePart={0}
@@ -39,28 +44,38 @@ const AboutusSection2 = ({
           variants={animationCircleVariants}
           exitAnimation={exitAnimation || false}
         >
-          <CirclePic />
+          <CirclePic
+            pic={person1Pic}
+            name="Ilgar Rusinov"
+            text="CFO"
+            text2="14 лет опыта"
+            picClass={cls.pic1}
+          />
         </AnimationBox>
         <AnimationBox
           visiblePart={90}
           variants={animationCircleVariants}
           exitAnimation={exitAnimation || false}
         >
-          <CirclePic />
+          <CirclePic
+            pic={person2Pic}
+            name="Muslim Kaya"
+            text="CEO"
+            text2="14 лет опыта"
+          />
         </AnimationBox>
         <AnimationBox
           visiblePart={90}
           variants={animationCircleVariants}
           exitAnimation={exitAnimation || false}
         >
-          <CirclePic />
-        </AnimationBox>
-        <AnimationBox
-          visiblePart={90}
-          variants={animationCircleVariants}
-          exitAnimation={exitAnimation || false}
-        >
-          <CirclePic />
+          <CirclePic
+            pic={person3Pic}
+            name="Talman Baskhanov"
+            text="COO"
+            text2="14 лет опыта"
+            picClass={cls.pic3}
+          />
         </AnimationBox>
       </AnimationBox>
     </div>

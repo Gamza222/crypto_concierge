@@ -1,14 +1,14 @@
-import React, { useCallback, useContext, useState } from 'react';
+import React, { useCallback, useContext, useState } from "react";
 
-import cls from './AboutusPage.module.scss';
-import FooterMobile from 'widgets/Footer/ui/FooterMobile/FooterMobile';
-import AboutusSection1 from './AboutusSection1/AboutusSection1';
-import AboutusSection2 from './AboutusSection2/AboutusSection2';
+import cls from "./AboutusPage.module.scss";
+import FooterMobile from "widgets/Footer/ui/FooterMobile/FooterMobile";
+import AboutusSection1 from "./AboutusSection1/AboutusSection1";
+import AboutusSection2 from "./AboutusSection2/AboutusSection2";
 
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Footer } from 'widgets/Footer';
-import { DimensionsContext } from 'app/providers/DimensionProvider/DimensionsProvider';
-import { AnimationBox } from 'entities/AnimationBox';
+import { classNames } from "shared/lib/classNames/classNames";
+import { Footer } from "widgets/Footer";
+import { DimensionsContext } from "app/providers/DimensionProvider/DimensionsProvider";
+import { AnimationBox } from "entities/AnimationBox";
 
 interface AboutusPageProps {
   className?: string;
@@ -34,7 +34,7 @@ const AboutusPage = ({ className }: AboutusPageProps) => {
           variants={animationSection1Variants}
           exitAnimation={false}
           // setExit={setterExitAnimation}
-          style={{ width: '100%' }}
+          style={{ width: "100%" }}
         >
           <AboutusSection2 />
         </AnimationBox>
