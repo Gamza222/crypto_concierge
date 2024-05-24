@@ -11,7 +11,7 @@
   }
 
   &::before {
-    content: '';
+    content: "";
     background: linear-gradient(
       90deg,
       var(--color-gold-1),
@@ -53,7 +53,6 @@
 
 .Right {
   display: flex;
-  flex-direction: column;
   gap: 140px;
 
   &__bottom {

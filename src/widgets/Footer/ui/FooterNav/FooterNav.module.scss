@@ -1,5 +1,5 @@
 .FooterNav {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(4, 1fr);
   gap: 80px;
 }
@@ -38,6 +38,7 @@
     row-gap: 55px;
     margin-top: 55px;
     column-gap: 45px;
+    justify-content: center;
   }
 
   .Element {

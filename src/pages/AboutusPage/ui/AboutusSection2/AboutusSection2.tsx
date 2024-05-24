@@ -71,7 +71,7 @@ const AboutusSection2 = ({
         >
           <CirclePic
             pic={person3Pic}
-            name="Talman Baskhanov"
+            name="Tamerlan Baskhanov"
             text="COO"
             text2="14 лет опыта"
             picClass={cls.pic3}

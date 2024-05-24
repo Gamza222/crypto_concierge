@@ -6,6 +6,7 @@
 
 .Buttons {
   display: flex;
+  flex-direction: column;
   gap: 4px;
   row-gap: 12px;
   flex-wrap: wrap;
@@ -45,7 +46,7 @@
 
 @media screen and (max-width: 1200px) {
   .FooterButtons {
-    margin-top: 70px;
+    margin-top: 100px;
     text-align: center;
   }
 

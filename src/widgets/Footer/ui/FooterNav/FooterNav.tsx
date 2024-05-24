@@ -36,12 +36,15 @@ const FooterNav = ({ className }: FooterNavProps) => {
           <a href="/about_us" className={cls.Element__items__link}>
             {t("About us")}
           </a>
-          <a href="#" className={cls.Element__items__link}>
+          <a
+            href="https://crypto-concierge.com/privacy-policy"
+            className={cls.Element__items__link}
+          >
             {t("Privacy Policy")}
           </a>
-          <a href="#" className={cls.Element__items__link}>
+          {/* <a href="#" className={cls.Element__items__link}>
             {t("Blog")}
-          </a>
+          </a> */}
         </div>
       </div>
       {/* <div className={cls.Element}>
@@ -55,7 +58,7 @@ const FooterNav = ({ className }: FooterNavProps) => {
           </a>
         </div>
       </div> */}
-      <div className={cls.Element}>
+      {/* <div className={cls.Element}>
         <h5 className={cls.Element__title}>{t("Coins")}</h5>
         <div className={cls.Element__items}>
           <a href="#" className={cls.Element__items__link}>
@@ -68,7 +71,7 @@ const FooterNav = ({ className }: FooterNavProps) => {
             {t("Tether (USDT)")}
           </a>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
